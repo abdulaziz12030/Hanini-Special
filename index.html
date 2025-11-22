@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حنيني سبشل | Hanini Special</title>
+
+  <!-- SEO -->
+  <meta name="description" content="حنيني سبشل | براند سعودي يقدم ألذ الحلويات والأكلات الشعبية الأصيلة مثل الحنيني والمحلى والقهوة السعودية، مع خدمة طلب سهلة عبر هنقرستيشن وجاهز ونون فود.">
+  <meta name="keywords" content="حنيني سبشل, Hanini Special, حلى نجدي, حنيني, محلى, حلويات شعبية سعودية, قهوة سعودية, أسر منتجة, طلب اونلاين, هنقرستيشن, جاهز, نون فود, حلويات الرياض">
+  <meta name="theme-color" content="#f7f0e3">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="حنيني سبشل | Hanini Special">
+  <meta property="og:description" content="أشهى الأكلات الشعبية والحلويات النجدية بطابع سعودي أصيل.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --primary: #111111;
+      --accent: #b89445;   /* قريب من المربعات في اللوقو */
+      --accent-soft: #e7d4a3;
+      --bg: #fdf8ef;
+      --card-bg: #ffffff;
+      --text: #202020;
+      --muted: #777777;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Tahoma", "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #fffaf1 0%, var(--bg) 40%, #fdfdfd 100%);
+      color: var(--text);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* Header & Navbar */
+    header {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      z-index: 999;
+      background: rgba(253, 248, 239, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0e6d6;
+    }
+
+    .navbar {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand-text-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-order-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(184,148,69,0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .nav-order-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(184,148,69,0.4);
+      background: #a58135;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+
+    main {
+      padding-top: 84px;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* Hero */
+    #hero {
+      padding: 4.3rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(184,148,69,0.08);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 2.4vw + 1rem, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.88rem;
+    }
+
+    .hero-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 5px 16px rgba(0,0,0,0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-cta {
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 12px 26px rgba(184,148,69,0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(184,148,69,0.55);
+      background: #a58135;
+    }
+
+    .hero-cta span.icon {
+      font-size: 1.2rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-slider {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: radial-gradient(circle at top right, #fdf1d5 0, #fdf8ef 55%, #ffffff 100%);
+      min-height: 260px;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: translateX(12%);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 1.4rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hero-slide-image {
+      flex: 1.2;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+
+    .hero-slide-image::before {
+      content: "Banner";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #c4b59a;
+      background-image: url("images/hero-banner-1.jpg"); /* استبدل بصور البانرات لاحقاً */
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-slide:nth-child(2) .hero-slide-image::before {
+      background-image: url("images/hero-banner-2.jpg");
+    }
+    .hero-slide:nth-child(3) .hero-slide-image::before {
+      background-image: url("images/hero-banner-3.jpg");
+    }
+    .hero-slide:nth-child(4) .hero-slide-image::before {
+      background-image: url("images/hero-banner-4.jpg");
+    }
+
+    .hero-slide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.2rem 0;
+    }
+
+    .hero-slide-tag {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-slide-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-slide-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-slider-dots {
+      position: absolute;
+      bottom: 12px;
+      inset-inline: 0;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .hero-slider-dots button {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(0,0,0,0.15);
+      padding: 0;
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+
+    .hero-slider-dots button.active {
+      width: 22px;
+      background: var(--accent);
+    }
+
+    /* About */
+    #about .about-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius-xl);
+      padding: 2rem 1.7rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0,1.6fr) minmax(0,1.1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-text p {
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .about-point {
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .about-point span.icon {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .about-illust {
+      position: relative;
+      min-height: 210px;
+    }
+
+    .about-blob {
+      position: absolute;
+      inset: 0;
+      border-radius: 42px;
+      background: radial-gradient(circle at top left, var(--accent-soft) 0, #fff8e7 45%, #ffffff 100%);
+      opacity: 0.9;
+    }
+
+    .about-plate {
+      position: absolute;
+      inset: 18px;
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.09);
+      display: flex;
+      flex-direction: column;
+      padding: 1.1rem 1.3rem;
+      gap: 0.5rem;
+    }
+
+    .about-plate-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .about-plate-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .about-plate-tag {
+      font-size: 0.78rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(184,148,69,0.12);
+      color: var(--accent);
+    }
+
+    /* Menu */
+    #menu {
+      background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,250,242,1));
+    }
+
+    .menu-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.86rem;
+    }
+
+    .menu-filter {
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #f0e2c9;
+      background: #fff;
+      cursor: default;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .dish-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transform: translateX(0);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    .dish-card.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .dish-card.from-right {
+      transform: translateX(18px);
+    }
+
+    .dish-card.from-left {
+      transform: translateX(-18px);
+    }
+
+    .dish-image {
+      position: relative;
+      overflow: hidden;
+      max-height: 180px;
+    }
+
+    .dish-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform 0.5s ease;
+    }
+
+    .dish-card:hover .dish-image img {
+      transform: scale(1.08);
+    }
+
+    .dish-tag {
+      position: absolute;
+      inset-inline-start: 10px;
+      top: 10px;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      font-size: 0.72rem;
+    }
+
+    .dish-body {
+      padding: 0.85rem 0.95rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.87rem;
+    }
+
+    .dish-title {
+      font-weight: 700;
+    }
+
+    .dish-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.3rem;
+    }
+
+    /* Testimonials */
+    #testimonials {
+      background: #ffffff;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1.1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      font-size: 4rem;
+      inset-inline-start: 12px;
+      top: -18px;
+      color: rgba(184,148,69,0.25);
+      pointer-events: none;
+    }
+
+    .testimonial-text {
+      margin-bottom: 0.65rem;
+      color: #444;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .testimonial-meta {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    /* Stats */
+    #stats {
+      background: radial-gradient(circle at top, #fff4de 0, #fdf7ec 45%, #ffffff 100%);
+    }
+
+    .stats-wrapper {
+      border-radius: var(--radius-xl);
+      padding: 1.7rem 1.5rem;
+      background: rgba(255,255,255,0.9);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0,1.5fr) minmax(0,1.1fr);
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1.2rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 0.9rem 0.5rem;
+      border-radius: 18px;
+      background: #fffaf3;
+      border: 1px solid #f0e2c9;
+    }
+
+    .stat-number {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .stats-note {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-top: 0.7rem;
+    }
+
+    .stats-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Order from platforms */
+    #order-platforms {
+      background: #ffffff;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .order-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1rem 0.9rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-logo {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      font-weight: 700;
+    }
+
+    .order-logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background: #fff7e4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .order-card p {
+      color: var(--muted);
+    }
+
+    .order-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .order-tag {
+      position: absolute;
+      top: 10px;
+      inset-inline-end: 10px;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #fdf3e0;
+      color: #b17d22;
+    }
+
+    /* Social & footer */
+    footer {
+      background: #111111;
+      color: #f8f5ef;
+      padding: 1.4rem 0 1.8rem;
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .social-label {
+      font-size: 0.78rem;
+      color: #d0c7b4;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #222;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.86rem;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .social-icon:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      inset-inline-start: 18px;
+      z-index: 1000;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    }
+
+    .whatsapp-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #25d366;
+      font-size: 0.9rem;
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 22px;
+      inset-inline-end: 18px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      z-index: 1000;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      background: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      nav ul {
+        position: absolute;
+        top: 100%;
+        inset-inline: 0;
+        background: rgba(253,248,239,0.98);
+        flex-direction: column;
+        padding: 0.7rem 1.1rem 0.9rem;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        border-bottom: 1px solid #f0e2c9;
+      }
+
+      nav ul.open {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero-grid,
+      #about .about-card,
+      .stats-wrapper {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .hero-slider {
+        min-height: 230px;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .testimonials-grid,
+      .order-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      #hero {
+        padding-top: 3.1rem;
+      }
+
+      .hero-grid {
+        gap: 1.6rem;
+      }
+
+      .menu-grid,
+      .testimonials-grid,
+      .order-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .whatsapp-btn span:last-child {
+        display: none; /* نخفي الرقم في الشاشات الصغيرة ويظهر الأيقونة فقط */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed header -->
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <div class="brand-logo">
+          <!-- احفظ اللوقو في مجلد images باسم hanini-logo.png -->
+          <img src="images/hanini-logo.png" alt="شعار حنيني سبشل">
+        </div>
+        <div>
+          <div class="brand-text-main">حنيني سبشل</div>
+          <div class="brand-text-sub">Hanini Special</div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+        <ul id="navMenu">
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#menu">أكلاتنا</a></li>
+          <li><a href="#testimonials">وش قالوا عنا</a></li>
+          <li><a href="#stats">أرقام تخلينا نستمر</a></li>
+          <li><a href="#order-platforms">من وين تطلب؟</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-order-btn" id="navOrderBtn">اطلب الآن</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            براند سعودي من قلب النجد
+          </div>
+          <h1 class="hero-title">
+            نخلّي <span>الحلى الشعبي</span> تجربة خاصة ما تنسى.
+          </h1>
+          <p class="hero-tagline">
+            في حنيني سبشل نعيد تقديم ألذ الحلويات والأكلات الشعبية الأصيلة بطابع حديث
+            يخدم جلسات البيت والجمعات والضيافة الفاخرة.
+          </p>
+
+          <div class="hero-highlight">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span> حنيني ومحلى على الطريقة الخاصة
+            </div>
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span> قهوة سعودية وقهوة لوز فاخرة
+            </div>
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span> بوكسات جاهزة للجمعات والمناسبات
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="hero-cta" id="heroOrderBtn">
+              <span class="icon">🍰</span>
+              اطلب وجبتك الآن
+            </button>
+            <span class="hero-note">الطلبات متاحة عبر هنقرستيشن، جاهز ونون فود.</span>
+          </div>
+        </div>
+
+        <div class="hero-slider" aria-label="عروض حنيني سبشل">
+          <div class="hero-slide active">
+            <div class="hero-slide-image"></div>
+            <div class="hero-slide-content">
+              <div>
+                <div class="hero-slide-tag">حنيني سبشل</div>
+                <div class="hero-slide-title">حنيني ومحلى بنكهة البيت النجدي</div>
+                <p class="hero-slide-text">
+                  وصفات متوارثة من المطبخ النجدي نقدّمها لك بجودة عالية وتغليف يناسب كل مناسبة.
+                </p>
+              </div>
+              <div class="hero-slide-text">
+                جاهزين لطلب واحد أو بوكس كامل للجمعات.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image"></div>
+            <div class="hero-slide-content">
+              <div>
+                <div class="hero-slide-tag">بوكسات الجمعات</div>
+                <div class="hero-slide-title">صنفين أو ثلاثة أصناف مع ترمس قهوة</div>
+                <p class="hero-slide-text">
+                  بوكسات مصممة لتجمع أحبابك حول ألذ الحلى مع قهوة سعودية فاخرة.
+                </p>
+              </div>
+              <div class="hero-slide-text">
+                تحجزها من هنقرستيشن وتوصلك لين باب بيتك.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image"></div>
+            <div class="hero-slide-content">
+              <div>
+                <div class="hero-slide-tag">مشروباتنا</div>
+                <div class="hero-slide-title">قهوة سعودية، قهوة لوز، وشاي كرك</div>
+                <p class="hero-slide-text">
+                  مشروبات دافية تكمل مزاج الحلى، من القهوة السعودية الأصيلة إلى شاي الكرك بالهيل.
+                </p>
+              </div>
+              <div class="hero-slide-text">
+                جرّبها مع فتة التمر أو الحنيني بالطريقة الخاصة.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image"></div>
+            <div class="hero-slide-content">
+              <div>
+                <div class="hero-slide-tag">أسر منتجة</div>
+                <div class="hero-slide-title">من مطبخ الأسرة لضيفك مباشرة</div>
+                <p class="hero-slide-text">
+                  حنيني سبشل مشروع أسرة منتجة سعودية تهتم بأدق التفاصيل من اختيار المكونات حتى التغليف.
+                </p>
+              </div>
+              <div class="hero-slide-text">
+                كل طلب تسوّيه يدعم استمرارنا ويخلينا نطوّر منيو الحلى أكثر وأكثر.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slider-dots" id="heroDots">
+            <button class="active" aria-label="الشريحة الأولى"></button>
+            <button aria-label="الشريحة الثانية"></button>
+            <button aria-label="الشريحة الثالثة"></button>
+            <button aria-label="الشريحة الرابعة"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">من نحن</div>
+          <h2 class="section-title">حنيني سبشل... حلى نجدي بطابع حديث</h2>
+          <p class="section-subtitle">
+            براند سعودي متخصص في تقديم الحلى الشعبي الأصيل بطريقة عصرية تناسب أجواء الرياض والجمعات العائلية.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-text">
+            <h3>وش قصة حنيني سبشل؟</h3>
+            <p>
+              حنيني سبشل انطلق من مطبخ أسرة سعودية تحب الأصالة وتؤمن أن الحلى الشعبي مو بس طعم،
+              هو ذكرى وجلسة وجمعة قهوة ما تنسى. طورنا وصفاتنا الخاصة للحنيني، المحلى، الفتة، والقشطة
+              الملكية عشان نوصلها لك بجودة ثابتة وتغليف أنيق.
+            </p>
+            <p>
+              اليوم نخدم عملاءنا عبر منصات التوصيل الرئيسية في المملكة، ونفتخر إن تقييماتكم العالية
+              هي سر استمرارنا وتطورنا.
+            </p>
+
+            <div class="about-points">
+              <div class="about-point">
+                <span class="icon"></span> وصفات نجديّة أصيلة بمكونات مختارة بعناية.
+              </div>
+              <div class="about-point">
+                <span class="icon"></span> جاهزين للطلبات الفردية وبوكسات الجمعات والمناسبات.
+              </div>
+              <div class="about-point">
+                <span class="icon"></span> طلبك سهل وسريع عبر هنقرستيشن، جاهز، ونون فود.
+              </div>
+            </div>
+          </div>
+
+          <div class="about-illust" aria-hidden="true">
+            <div class="about-blob"></div>
+            <div class="about-plate">
+              <div class="about-plate-title">طبق اليوم من حنيني سبشل</div>
+              <div class="about-plate-row">
+                <span>فتة تمر بالقشطة</span>
+                <span class="about-plate-tag">الأكثر طلباً</span>
+              </div>
+              <div class="about-plate-row">
+                <span>قشط ملكي بالفخار</span>
+                <span>مع قهوة سعودية</span>
+              </div>
+              <div class="about-plate-row">
+                <span>بوكس الجمعات</span>
+                <span>جاهز للضيافة</span>
+              </div>
+              <div class="about-plate-row" style="margin-top:0.5rem; font-size:0.78rem; color:var(--muted);">
+                <span>اطلبها الآن عبر منصات التوصيل</span>
+                <span>🍮</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">أكلاتنا</div>
+          <h2 class="section-title">كل ما تشتهيه من حلى نجدي وقهوة</h2>
+          <p class="section-subtitle">
+            هذه قائمة بأهم الأطباق المتوفرة في حنيني سبشل كما تظهر في منيو هنقرستيشن. الصور تُرفع لاحقاً لمجلد
+            <strong>images</strong> داخل المستودع.
+          </p>
+        </div>
+
+        <div class="menu-filters">
+          <div class="menu-filter">🍮 الحلويات</div>
+          <div class="menu-filter">☕ المشروبات</div>
+          <div class="menu-filter">🎁 بوكسات الجمعات</div>
+        </div>
+
+        <div class="menu-grid">
+          <!-- الحلويات -->
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/fatteh-cream.jpg" alt="فتة بالقشطة">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">فتة بالقشطة</div>
+              <p>فتة تمر بالقشطة بطعم نجدي أصيل تناسب كل جلسة قهوة.</p>
+              <div class="dish-meta"><span>32 ر.س</span><span>تقريباً 651 سعرة حرارية</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/summer-dessert-mahlabia.jpg" alt="حلى صيفي بارد مهلبية">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">حلى صيفي بارد مهلبية</div>
+              <p>حلا مهلبية بالكنافة مع المكسرات، بارد وخفيف يناسب الصيف.</p>
+              <div class="dish-meta"><span>39 ر.س</span><span>414 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/summer-dessert-caramel.jpg" alt="حلى صيفي بارد بالكراميل">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">حلى صيفي بارد بالكراميل</div>
+              <p>حلا بالكريم كراميل مع الكنافة، مزيج مثالي لعشّاق الكراميل.</p>
+              <div class="dish-meta"><span>39 ر.س</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/maamoul-medium.jpg" alt="معمول تمر وسط">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">معمول تمر وسط</div>
+              <p>معمول بالتمر المخبوز يومياً يقدم مع القهوة السعودية.</p>
+              <div class="dish-meta"><span>15 ر.س</span><span>402 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/dates-with-nuts.jpg" alt="تمر بالمكسرات">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">تمر بالمكسرات</div>
+              <p>تمر محشي بالمكسرات الفاخرة، مناسب للضيافة الفخمة.</p>
+              <div class="dish-meta"><span>42 ر.س</span><span>569 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/hanini-special-large.jpg" alt="حنيني سبيشل كبير">
+              <span class="dish-tag">توقيع المتجر</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">حنيني سبيشل كبير</div>
+              <p>حنيني سبيشل بالطريقة الخاصة، وصفة عائلية متوارثة بطعم لا ينسى.</p>
+              <div class="dish-meta"><span>56 ر.س</span><span>600 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/mohala.jpg" alt="محلى">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">محلى</div>
+              <p>محلى نجدي، تمر مع دقيق البر بطعم يذكّرك بحلى البيت.</p>
+              <div class="dish-meta"><span>59 ر.س</span><span>530 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/royal-qasht-small.jpg" alt="قشط ملكي صغير">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">قشط ملكي صغير</div>
+              <p>قشط ملكي خاص ومميز بالفخار، يناسب جلسات القهوة الصغيرة.</p>
+              <div class="dish-meta"><span>32 ر.س</span><span>381 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/royal-qasht-large.jpg" alt="قشط ملكي كبير">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">قشط ملكي كبير</div>
+              <p>قشط ملكي بالفخار بحجم كبير يكفي العائلة والجمعات.</p>
+              <div class="dish-meta"><span>68 ر.س</span><span>763 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/fatteh-dates.jpg" alt="فتة تمر">
+              <span class="dish-tag">حلويات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">فتة تمر</div>
+              <p>فتة تمر مع الخلطة الخاصة المميزة، خيار مثالي لمحبي التمر.</p>
+              <div class="dish-meta"><span>29 ر.س</span><span>500 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <!-- المشروبات -->
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/saudi-coffee.jpg" alt="القهوة السعودية">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">القهوة السعودية</div>
+              <p>قهوة سعودية من حبوب البن السعودي الفاخر، تقدّم مع الهيل.</p>
+              <div class="dish-meta"><span>45 ر.س</span><span>120 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/coffee-peel.jpg" alt="قهوة قشر">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">قهوة قشر</div>
+              <p>قهوة بالقشر، نكهة يمنية أصيلة تكمّل جلسة الحلى.</p>
+              <div class="dish-meta"><span>40 ر.س</span><span>117 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/tea-karak.jpg" alt="شاي كرك">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">شاي كرك</div>
+              <p>شاي مخلوط بالحليب والهيل، غني ودافي لجلسات الليالي.</p>
+              <div class="dish-meta"><span>49 ر.س</span><span>287 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/plain-tea.jpg" alt="شاهي ساده">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">شاهي ساده</div>
+              <p>شاي أحمر ساخن كلاسيكي يناسب كل الأطباق.</p>
+              <div class="dish-meta"><span>35 ر.س</span><span>49 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/basil-tea.jpg" alt="شاهي حبق">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">شاهي حبق</div>
+              <p>شاي ساخن بالحبق، عطري ومنعش يناسب أمسيات الشتاء.</p>
+              <div class="dish-meta"><span>35 ر.س</span><span>49 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/mint-tea.jpg" alt="شاهي نعناع">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">شاهي نعناع</div>
+              <p>شاي ساخن بالنعناع الطازج، خفيف ومنعش مع الحلى.</p>
+              <div class="dish-meta"><span>35 ر.س</span><span>49 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/almond-coffee.jpg" alt="قهوة لوز">
+              <span class="dish-tag">مشروبات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">قهوة لوز</div>
+              <p>قهوة لوز غنية تناسب عشاق النكهات المميزة.</p>
+              <div class="dish-meta"><span>50 ر.س</span><span>859 سعرة تقريباً</span></div>
+            </div>
+          </article>
+
+          <!-- بوكسات الجمعات -->
+          <article class="dish-card from-left">
+            <div class="dish-image">
+              <img src="images/gathering-box-2.jpg" alt="بوقس الجمعات صنفين كبيرة وترمس قهوة سعودية">
+              <span class="dish-tag">بوكسات الجمعات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">بوكس الجمعات (صنفين كبيرة + قهوة سعودية)</div>
+              <p>صنفين من الحلى بحجم كبير مع ترمس قهوة سعودية، مثالي للجلسات العائلية.</p>
+              <div class="dish-meta"><span>169 ر.س</span></div>
+            </div>
+          </article>
+
+          <article class="dish-card from-right">
+            <div class="dish-image">
+              <img src="images/gathering-box-3.jpg" alt="بوكس الجمعات 3 أصناف وترمس قهوة سعودية">
+              <span class="dish-tag">بوكسات الجمعات</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-title">بوكس الجمعات (3 أصناف + قهوة سعودية)</div>
+              <p>بوكس بثلاثة أصناف من الحلى مع ترمس قهوة سعودية، جاهز لعزيمة كاملة.</p>
+              <div class="dish-meta"><span>120 ر.س</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">وش قالوا عنا</div>
+          <h2 class="section-title">آراء تخليّنا نستمر</h2>
+          <p class="section-subtitle">
+            مقتطفات من آراء عملائنا في منصات التوصيل ووسائل التواصل.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "أفضل حنيني ذقته في الرياض، الطعم نفس حلى البيت والنظافة والتغليف ممتازة."
+            </p>
+            <div class="testimonial-name">أبو ناصر</div>
+            <div class="testimonial-meta">عميل هنقرستيشن</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "بوكس الجمعات كان جاهز على الموعد، وفر علينا وقت وجهد وضيوفي أعجبهم الحلى."
+            </p>
+            <div class="testimonial-name">أم يزيد</div>
+            <div class="testimonial-meta">طلب بوكس مناسبات</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "القهوة السعودية وقهوة اللوز شيء خيالي مع المعمول والتمر بالمكسرات، أكيد بطلب مرة ثانية."
+            </p>
+            <div class="testimonial-name">رهف</div>
+            <div class="testimonial-meta">عميلة جاهز</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">أرقام تخلينا نستمر</div>
+          <h2 class="section-title">قصتنا بلغة الأرقام</h2>
+          <p class="section-subtitle">
+            أرقام تقريبية تعطيك صورة عن تجربة عملائنا مع حنيني سبشل.
+          </p>
+        </div>
+
+        <div class="stats-wrapper">
+          <div>
+            <div class="stats-title">كل طلب جديد يزيد شغفنا.</div>
+            <p style="font-size:0.95rem; color:#444;">
+              نحرص في حنيني سبشل على ثبات الجودة من أول طلب إلى آخر طلب. نتابع رضا العملاء وتعليقاتهم على منصات
+              التوصيل ونطوّر منيو الحلى بشكل مستمر بناءً على ملاحظاتكم.
+            </p>
+            <p class="stats-note">
+              الأرقام التالية تُحدّث داخلياً بشكل دوري وهي تقديرية لغرض التعريف بالبراند.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number counter" data-target="97">0%</div>
+              <div class="stat-label">متوسط رضا العملاء</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number counter" data-target="15000">0</div>
+              <div class="stat-label">طلب تم تقديمه</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number counter" data-target="5">0</div>
+              <div class="stat-label">سنوات من الخبرة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order from platforms -->
+    <section id="order-platforms">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">من وين ودك تطلب وجبة اليوم؟</div>
+          <h2 class="section-title">اختر المنصة اللي تناسبك</h2>
+          <p class="section-subtitle">
+            كل روابط الطلب توصل مباشرة لحنيني سبشل في منصات التوصيل. اختر المنصة الأقرب لك وخلّ الحلى يوصلك للبيت.
+          </p>
+        </div>
+
+        <div class="order-grid">
+          <article class="order-card">
+            <div class="order-tag">الأكثر استخداماً</div>
+            <div class="order-logo">
+              <div class="order-logo-badge">HS</div>
+              <span>هنقرستيشن</span>
+            </div>
+            <p>
+              تصفح منيو حنيني سبشل كامل، اختر حجم الطبق أو البوكس، وخلي التوصيل يجيك بأسرع وقت.
+            </p>
+            <a class="order-link" href="https://hungerstation.com/sa-ar/restaurant/riyadh/al-muzahimiyah/112830" target="_blank" rel="noopener">
+              أطلب من هنقرستيشن الآن <span>↗</span>
+            </a>
+          </article>
+
+          <article class="order-card">
+            <div class="order-logo">
+              <div class="order-logo-badge">JZ</div>
+              <span>جاهز</span>
+            </div>
+            <p>
+              تفضّل تطلب من تطبيق جاهز؟ حنيني سبشل متوفر أيضاً لتخدمك بنفس الجودة والطعم الأصيل.
+            </p>
+            <!-- استبدل # برابط حنيني سبشل في تطبيق جاهز -->
+            <a class="order-link" href="#" target="_blank" rel="noopener">
+              أطلب من جاهز <span>↗</span>
+            </a>
+          </article>
+
+          <article class="order-card">
+            <div class="order-logo">
+              <div class="order-logo-badge">NF</div>
+              <span>نون فود</span>
+            </div>
+            <p>
+              لو متعود على نون فود، تقدر تطلب حلاك المفضل من حنيني سبشل بنفس سهولة التسوّق اليومية.
+            </p>
+            <!-- استبدل # برابط حنيني سبشل في نون فود -->
+            <a class="order-link" href="#" target="_blank" rel="noopener">
+              أطلب من نون فود <span>↗</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- WhatsApp floating button -->
+  <div class="whatsapp-float">
+    <a class="whatsapp-btn" href="https://wa.me/966506222287" target="_blank" rel="noopener">
+      <span class="whatsapp-icon">🟢</span>
+      <span>0506222287</span>
+    </a>
+  </div>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="العودة للأعلى">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> حنيني سبشل – Hanini Special. جميع الحقوق محفوظة.
+      </div>
+      <div class="footer-social">
+        <span class="social-label">تابعنا:</span>
+        <div class="social-icons">
+          <!-- استبدل الروابط بحسابات حنيني الفعلية -->
+          <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">IG</a>
+          <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Snapchat">SC</a>
+          <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="X">X</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // سنة الفوتر
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // زر القائمة للجوال
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+
+    // زر "اطلب الآن" في الهيدر والهيرو
+    const heroOrderBtn = document.getElementById("heroOrderBtn");
+    const navOrderBtn = document.getElementById("navOrderBtn");
+
+    function scrollToOrderSection() {
+      const section = document.getElementById("order-platforms");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    heroOrderBtn.addEventListener("click", scrollToOrderSection);
+    navOrderBtn.addEventListener("click", scrollToOrderSection);
+
+    // سلايدر الهيرو
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll("#heroDots button");
+    let currentSlide = 0;
+    let sliderInterval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    function startSlider() {
+      sliderInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlider() {
+      clearInterval(sliderInterval);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        stopSlider();
+        showSlide(i);
+        startSlider();
+      });
+    });
+
+    startSlider();
+
+    // تحريك بطاقات الأطباق (من اليمين واليسار)
+    const dishCards = document.querySelectorAll(".dish-card");
+    const observerOptions = {
+      threshold: 0.16
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    dishCards.forEach((card, index) => {
+      // تناوب بين دخول من اليمين واليسار
+      if (index % 2 === 0) {
+        card.classList.add("from-right");
+      } else {
+        card.classList.add("from-left");
+      }
+      revealObserver.observe(card);
+    });
+
+    // العداد المتحرك في قسم الأرقام
+    const counters = document.querySelectorAll(".counter");
+    let countersStarted = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const isPercent = counter.textContent.includes("%");
+        let start = 0;
+        const duration = 1800;
+        const stepTime = 18;
+        const steps = Math.ceil(duration / stepTime);
+        const increment = target / steps;
+
+        const interval = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            start = target;
+            clearInterval(interval);
+          }
+          counter.textContent = isPercent ? Math.floor(start) + "%" : Math.floor(start).toLocaleString("ar-SA");
+        }, stepTime);
+      });
+    }
+
+    const statsSection = document.getElementById("stats");
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+          countersStarted = true;
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsSection);
+
+    // زر العودة للأعلى
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
