@@ -3,366 +3,1188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>حنيني سبشل | Hanini Special</title>
 
-  <!-- SEO -->
-  <meta name="description" content="حنيني سبشل | براند سعودي يقدم ألذ الحلويات والأكلات الشعبية الأصيلة مثل الحنيني والمحلى والفتة والقشطة والقهوة، مع خدمة طلب سهلة عبر هنقرستيشن، جاهز، ونون فود.">
-  <meta name="keywords" content="حنيني سبشل, Hanini Special, حلى نجدي, حنيني, محلى, حلويات شعبية سعودية, أسر منتجة, طلب اونلاين, هنقرستيشن, جاهز, نون فود, قهوة سعودية, بوكسات الجمعات">
+  <title>حنيني سبشل | Hanini Special – أطباق منزلية فاخرة بطابع سعودي</title>
+  <meta name="description" content="حنيني سبشل – منصة أسر منتجة تقدم أشهى الأطباق المنزلية والحلويات بطابع سعودي أصيل. اطلب الآن عبر هنقرستيشن، جاهز، ونون فود، وتمتع بنكهات بيتية خاصة ومميزة.">
+  <meta name="keywords" content="حنيني سبشل, Hanini Special, أسرة منتجة, أكل بيت, طلبات أونلاين, هنقرستيشن, جاهز, نون فود, أكل منزلي, حلويات, معجنات, أطباق سعودية">
+
+  <!-- خط مناسب (مثلاً: Tajawal من Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* الألوان الأساسية */
     :root {
-      --primary: #111111;
-      --accent: #b89445;
-      --bg: #fdf8ef;
-      --card-bg: #ffffff;
-      --muted: #777777;
-      --shadow: 0 10px 30px rgba(0,0,0,0.05);
-      --radius: 18px;
+      --bg: #0f172a;              /* خلفية داكنة فاخرة */
+      --bg-soft: #111827;
+      --card: #020617;
+      --accent: #eab308;          /* ذهبي دافئ */
+      --accent-soft: rgba(234, 179, 8, 0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.3);
+      --radius-xl: 1.5rem;
+      --radius-lg: 1rem;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.45);
+      --shadow-btn: 0 12px 30px rgba(234, 179, 8, 0.35);
+      --transition-fast: 0.25s ease;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: "Tahoma", sans-serif;
-      background: var(--bg);
-      margin: 0;
-      padding: 0;
-      color: var(--primary);
-      scroll-behavior: smooth;
+      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
-    img { width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(10px);
-      padding: 10px 0;
-      z-index: 999;
-      border-bottom: 1px solid #eee;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 1.5rem 1rem 2.5rem;
     }
 
     .container {
-      width: min(1100px, 92%);
-      margin: auto;
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      justify-content: flex-end;
-    }
-
-    nav a {
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* زر اطلب الآن */
-    .order-btn {
-      background: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* القسم الرئيسي */
-    #hero {
-      margin-top: 100px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-      padding-bottom: 40px;
-    }
-
-    /* سلايدر الهيرو */
-    .hero-slider {
-      position: relative;
-      height: 350px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    /* رأس الصفحة */
+    header {
+      position: sticky;
       top: 0;
-      left: 100%;
-      opacity: 0;
-      transition: 0.8s;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.75), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
-    .hero-slide.active {
-      left: 0;
-      opacity: 1;
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    /* قسم من نحن */
-    #about, #menu, #testimonials, #stats, #order-platforms {
-      padding: 60px 0;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 10px;
-      font-weight: 900;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    /* بطاقات الأطباق */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .dish-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transform: translateX(40px);
-      opacity: 0;
-      transition: 0.7s;
-    }
-
-    .dish-card.in-view {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-    .dish-info {
-      padding: 15px;
-    }
-
-    .dish-title { font-weight: bold; margin-bottom: 5px; }
-
-    .dish-text { font-size: 14px; color: var(--muted); }
-
-    /* قسم المنصات */
-    .platforms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-      gap: 20px;
-    }
-
-    .platform-card {
-      background: white;
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .platform-card img { height: 45px; margin-bottom: 10px; }
-
-    /* اسفل الصفحة */
-    footer {
-      background: #111;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    /* واتساب ثابت */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #25d366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      font-weight: bold;
-      z-index: 1000;
-      text-decoration: none;
-    }
-
-    /* زر العودة للأعلى */
-    #scrollTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--primary);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 20px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 250, 250, 0.4);
+      background: radial-gradient(circle at 30% 10%, #fef9c3, #facc15, #a16207);
+      box-shadow: 0 0 18px rgba(234, 179, 8, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      transition: 0.3s;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #1f2937;
     }
 
-    #scrollTop.show { opacity: 1; }
+    .brand-text-main {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
 
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+      font-weight: 400;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .badge-soft {
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(234, 179, 8, 0.4);
+      font-size: 0.8rem;
+    }
+
+    .btn-primary {
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #111827;
+      box-shadow: var(--shadow-btn);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: var(--transition-fast);
+    }
+
+    .btn-primary span {
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(248, 250, 252, 0.18);
+    }
+
+    .btn-outline {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .btn-outline:hover {
+      background: #020617;
+      border-color: var(--accent);
+      color: #fefce8;
+    }
+
+    /* البطل (الهيرو) */
+    .hero {
+      padding: 2rem 0 1.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.4rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-eyebrow span {
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #facc15, #fb923c);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-meta-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.8);
+    }
+
+    .hero-card {
+      padding: 1rem;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top, #111827, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 10% 0, rgba(250, 204, 21, 0.13), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-img-wrap {
+      margin-top: 0.35rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform 0.8s ease;
+    }
+
+    .hero-img-wrap:hover img {
+      transform: scale(1.06);
+    }
+
+    .hero-stamp {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(249, 250, 251, 0.5);
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .hero-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-platforms span {
+      padding: 0.12rem 0.55rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+    }
+
+    /* قسم لماذا حنيني سبشل مختلف – 1،2،3،4 */
+    section {
+      margin-top: 2.3rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      padding: 0.9rem 0.9rem 0.95rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-fast);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 18px 40px rgba(8, 47, 73, 0.55);
+    }
+
+    .badge-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(250, 204, 21, 0.6);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* المنيو المختصر */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .menu-card {
+      padding: 0.85rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-soft);
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .menu-img {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .menu-info-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .menu-info-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .menu-info-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .menu-tag {
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* خطوات الطلب – ١،٢،٣،٤ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      padding: 0.85rem 0.9rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-number {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* منصات الطلب */
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .platform-card {
+      padding: 0.9rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+      transition: var(--transition-fast);
+    }
+
+    .platform-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 38px rgba(8, 47, 73, 0.6);
+    }
+
+    .platform-top {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .platform-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .platform-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .platform-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .platform-link {
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.1rem;
+      color: var(--accent);
+    }
+
+    /* آراء العملاء */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 1rem;
+    }
+
+    .review-card {
+      padding: 0.9rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--border-soft);
+    }
+
+    .review-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .review-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .stars {
+      color: #fbbf24;
+      letter-spacing: 0.05em;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .kpi-card {
+      padding: 0.7rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      font-size: 0.8rem;
+    }
+
+    .kpi-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.1rem;
+    }
+
+    /* FAQ بسيط */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .faq-item {
+      padding: 0.9rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .faq-q {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* الفوتر */
+    footer {
+      margin-top: 2.3rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    /* زر واتساب عائم */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.3rem;
+      left: 1.1rem;
+      z-index: 60;
+    }
+
+    .whatsapp-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 15px 30px rgba(22, 163, 74, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ecfdf5;
+      font-size: 1.7rem;
+      border: 3px solid #bbf7d0;
+      transition: var(--transition-fast);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.85);
+    }
+
+    /* استجابة الشاشات الصغيرة */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card {
+        order: -1;
+      }
+      .grid-4,
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .platforms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid-4,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+      .page {
+        padding-inline: 0.8rem;
+      }
+      .hero {
+        padding-top: 1.5rem;
+      }
+      .whatsapp-float {
+        left: 0.9rem;
+        bottom: 1rem;
+      }
+    }
   </style>
-
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#menu">أكلاتنا</a></li>
-        <li><a href="#order-platforms">من وين تطلب؟</a></li>
-      </ul>
+  <!-- زر واتساب عائم – عدّل الرقم -->
+  <div class="whatsapp-float">
+    <a class="whatsapp-btn" href="https://wa.me/966500000000" target="_blank" aria-label="تواصل واتساب مع حنيني سبشل">
+      ☏
+    </a>
+  </div>
+
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-logo">ح</div>
+        <div>
+          <div class="brand-text-main">حنيني سبشل</div>
+          <div class="brand-sub">نكهات بيتية بطابع سعودي خاص</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">عن حنيني</a>
+        <a href="#menu">المنيو</a>
+        <a href="#platforms">منصات الطلب</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </div>
+
+      <div class="nav-cta">
+        <span class="badge-soft">أسرة منتجة معتمدة</span>
+        <a href="#order" class="btn-primary">
+          <span>🍽</span>
+          <span>اطلب الآن</span>
+        </a>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- الهيرو -->
-<section id="hero" class="container">
-  <div>
-    <h1 style="font-size:32px; line-height:1.4;">
-      اكتشف ألذ الحلى الشعبي  
-      <span style="color:var(--accent); font-weight:900;">مع حنيني سبشل</span>
-    </h1>
-    <p style="color:var(--muted); font-size:17px; margin-bottom:20px;">
-      نقدم لك الحنيني والمحلى والفتة والقشطة الملكية بأطيب وصفة سعودية، مع خدمة توصيل سريعة عبر هنقرستيشن وجاهز ونون فود.
-    </p>
+  <main class="page">
+    <div class="container">
 
-    <button class="order-btn" onclick="document.querySelector('#order-platforms').scrollIntoView({behavior:'smooth'})">
-      اطلب الآن
-    </button>
-  </div>
+      <!-- الهيرو -->
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow">
+              <span>جديد</span>
+              منصة الطلبات الرسمية لمنتجات <b>حنيني سبشل</b>
+            </div>
+            <h1 class="hero-title">
+              أطباق منزلية <span>سبشل</span>
+              توصلك ساخنة لحد باب البيت 🍯
+            </h1>
+            <p class="hero-subtitle">
+              حنيني سبشل هي منصة للأكل البيتي والحلويات بطابع سعودي منزلي.  
+              اختياراتنا محددة ومتقنة، وكل طبق يجهز بحب في مطبخ الأسرة وفق أعلى معايير الجودة والنظافة.
+            </p>
 
-  <div class="hero-slider">
-    <img class="hero-slide active" src="images/hero-banner-1.jpg">
-    <img class="hero-slide" src="images/hero-banner-2.jpg">
-    <img class="hero-slide" src="images/hero-banner-3.jpg">
-    <img class="hero-slide" src="images/hero-banner-4.jpg">
-  </div>
-</section>
+            <div class="hero-cta-row">
+              <a href="#platforms" class="btn-primary">
+                <span>🛒</span>
+                <span>اطلب من المنصات المعتمدة</span>
+              </a>
+              <a href="https://wa.me/966500000000" target="_blank" class="btn-outline">
+                <span>💬</span>
+                <span>تواصل مباشر واتساب</span>
+              </a>
+            </div>
 
-<!-- من نحن -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">من نحن</h2>
-    <p class="section-subtitle">براند سعودي متخصص في تقديم أجمل الأكلات الشعبية والحلى النجدي.</p>
-    <p style="font-size:17px; line-height:1.9;">
-      حنيني سبشل مشروع أسرة سعودية تقدّم وصفات محلية أصيلة مثل الحنيني والمحلى والقشطة الملكية،  
-      بجودة عالية وتغليف فاخر يناسب الجلسات العائلية والمناسبات.
-    </p>
-  </div>
-</section>
+            <div class="hero-meta">
+              <span><span class="hero-meta-dot"></span> تجهيز طازج يومي</span>
+              <span><span class="hero-meta-dot"></span> متاح عبر هنقرستيشن – جاهز – نون فود</span>
+              <span><span class="hero-meta-dot"></span> مثالي للعوائل والضيافة</span>
+            </div>
+          </div>
 
-<!-- الأكلات -->
-<section id="menu">
-  <div class="container">
-    <h2 class="section-title">أكلاتنا</h2>
-    <p class="section-subtitle">جميع الأصناف كما تظهر في منيو هنقرستيشن.</p>
-
-    <div class="menu-grid">
-
-      <!-- مثال طبق -->
-      <div class="dish-card">
-        <img src="images/fatteh-cream.jpg">
-        <div class="dish-info">
-          <div class="dish-title">فتة بالقشطة – 32 ر.س</div>
-          <div class="dish-text">فتة تمر بالقشطة بطعم أصيل.</div>
+          <aside class="hero-card">
+            <div class="hero-tag">
+              <span>طبق اليوم من حنيني سبشل</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);">صورة تجريبية – استبدلها لاحقاً</span>
+            </div>
+            <div class="hero-img-wrap">
+              <!-- غيّر مسار الصورة لاحقاً إلى صورة الهيرو الحقيقية -->
+              <img src="images/hero-hanini-1.jpg" alt="طبق حنيني سبشل - صورة تجريبية">
+              <div class="hero-stamp">من مطبخ البيت إلى مائدتك</div>
+            </div>
+            <div class="hero-platforms">
+              <span>✔ متوفر في هنقرستيشن</span>
+              <span>✔ متوفر في جاهز</span>
+              <span>✔ متوفر في نون فود</span>
+            </div>
+          </aside>
         </div>
-      </div>
+      </section>
 
-      <!-- طبق آخر -->
-      <div class="dish-card">
-        <img src="images/hanini-special-large.jpg">
-        <div class="dish-info">
-          <div class="dish-title">حنيني سبشل كبير – 56 ر.س</div>
-          <div class="dish-text">وصفة عائلية نجديّة متوارثة.</div>
+      <!-- لماذا حنيني سبشل مختلف (١،٢،٣،٤) -->
+      <section id="about">
+        <div class="section-header">
+          <div>
+            <div class="section-title">ليش حنيني سبشل مختلف؟</div>
+            <div class="section-subtitle">
+              أربع نقاط جوهرية تميّز تجربتك معنا، من النكهة وحتى طريقة تقديم الطلب.
+            </div>
+          </div>
+          <div class="pill">مميزات حنيني سبشل – ١،٢،٣،٤</div>
         </div>
-      </div>
 
-      <!-- يمكنك إضافة باقي القائمة لاحقاً بكل سهولة -->
+        <div class="grid-4">
+          <div class="feature-card">
+            <div class="badge-number">١</div>
+            <div class="feature-title">نكهات بيتية أصيلة</div>
+            <div class="feature-text">
+              وصفات عائلية خاصة تم تطويرها عبر سنوات، بطابع سعودي منزلي يناسب جلساتك وضيوفك.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٢</div>
+            <div class="feature-title">جودة مكونات عالية</div>
+            <div class="feature-text">
+              نستخدم مكونات مختارة بعناية، مع حرص تام على النظافة وسلامة الغذاء في كل خطوة.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٣</div>
+            <div class="feature-title">طلب سهل عبر المنصات</div>
+            <div class="feature-text">
+              تقدر تطلب مباشرة من هنقرستيشن أو جاهز أو نون فود حسب المتوفر في مدينتك.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٤</div>
+            <div class="feature-title">تجربة ضيافة متكاملة</div>
+            <div class="feature-text">
+              خيارات مناسبة للعائلة، للعزائم الصغيرة، ولعلب الضيافة الجاهزة للضيوف والمناسبات.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المنيو المختصر (تجريبي – استبدل الصور والنصوص لاحقاً) -->
+      <section id="menu">
+        <div class="section-header">
+          <div>
+            <div class="section-title">نماذج من منيو حنيني سبشل</div>
+            <div class="section-subtitle">
+              هذه أمثلة لعرض شكل الأطباق فقط، يمكنك لاحقاً ربط الأطباق الحقيقية بمحتوى هنقرستيشن.
+            </div>
+          </div>
+          <div class="pill">المنيو التجريبي</div>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-1.jpg" alt="طبق حلى حنيني">
+            </div>
+            <div>
+              <div class="menu-info-title">حلى حنيني الخاص</div>
+              <div class="menu-info-desc">
+                حنيني دافئ بطابع نجدي، يقدم مع إضافة سبشل من الأسرة تعطيه نكهة لا تُنسى.
+              </div>
+              <div class="menu-info-meta">
+                <span class="menu-tag">مثالي لضيافة القهوة</span>
+                <span>متوفر عبر هنقرستيشن</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-2.jpg" alt="صينية فطور">
+            </div>
+            <div>
+              <div class="menu-info-title">صينية فطور عائلية</div>
+              <div class="menu-info-desc">
+                تشكيلة فطور بيتية جاهزة للتقديم، مناسبة لعائلة أو ضيوف الفطور الصباحي.
+              </div>
+              <div class="menu-info-meta">
+                <span class="menu-tag">تكفي ٤–٦ أشخاص</span>
+                <span>بالطلب المسبق</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-3.jpg" alt="علب ضيافة">
+            </div>
+            <div>
+              <div class="menu-info-title">علب ضيافة سبشل</div>
+              <div class="menu-info-desc">
+                علب مرتبة تحتوي على حلى ومعجنات مناسبة للتوزيعات والمناسبات الخاصة.
+              </div>
+              <div class="menu-info-meta">
+                <span class="menu-tag">مناسب للهدايا</span>
+                <span>اطلب عبر المنصات</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- خطوات الطلب – ١،٢،٣،٤ -->
+      <section id="order">
+        <div class="section-header">
+          <div>
+            <div class="section-title">طريقة الطلب في ٤ خطوات بسيطة</div>
+            <div class="section-subtitle">
+              اختر المنصة المفضلة – ثم ارفع طلبك بخطوات واضحة وسريعة.
+            </div>
+          </div>
+          <div class="pill">رحلة الطلب</div>
+        </div>
+
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">١</div>
+            <div class="step-title">اختر المنصة</div>
+            <div class="step-text">
+              افتح (هنقرستيشن أو جاهز أو نون فود) من الروابط بالأسفل، وابحث عن <b>حنيني سبشل</b>.
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">٢</div>
+            <div class="step-title">حدد المنتجات</div>
+            <div class="step-text">
+              اختر الأطباق المتاحة في المنيو حسب اليوم، وأضفها لعربة التسوق.
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">٣</div>
+            <div class="step-title">ثبّت وقت التوصيل</div>
+            <div class="step-text">
+              حدد العنوان ووقت التوصيل المناسب لك، مع إمكانية إضافة ملاحظات خاصة.
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">٤</div>
+            <div class="step-title">استلم وشارك اللحظة</div>
+            <div class="step-text">
+              استلم طلبك، واستمتع بالنكهات البيتية المميزة – ولا تنسَ تقييم تجربتك معنا.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- منصات الطلب (هنقرستيشن – جاهز – نون فود) -->
+      <section id="platforms">
+        <div class="section-header">
+          <div>
+            <div class="section-title">منصات الطلب الرسمية</div>
+            <div class="section-subtitle">
+              يمكنك الطلب مباشرة من إحدى المنصات التالية. عدّل الروابط لتشير لصفحة حنيني سبشل الرسمية في كل منصة.
+            </div>
+          </div>
+          <div class="pill">هنقرستيشن • جاهز • نون فود</div>
+        </div>
+
+        <div class="platforms-grid">
+          <article class="platform-card">
+            <div class="platform-top">
+              <div class="platform-logo">🍔</div>
+              <div>
+                <div class="platform-name">هنقرستيشن</div>
+                <div class="platform-note">
+                  المنصة الأساسية لعرض المنتجات المتاحة يومياً.
+                </div>
+              </div>
+            </div>
+            <div>
+              <a href="https://hungerstation.com/sa-ar/restaurant/riyadh/al-muzahimiyah/112830" target="_blank" class="platform-link">
+                <span>فتح صفحة حنيني سبشل في هنقرستيشن</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="platform-card">
+            <div class="platform-top">
+              <div class="platform-logo">📦</div>
+              <div>
+                <div class="platform-name">جاهز</div>
+                <div class="platform-note">
+                  لطلباتك في أوقات الذروة والمناسبات الخاصة.
+                </div>
+              </div>
+            </div>
+            <div>
+              <a href="#" target="_blank" class="platform-link">
+                <span>أضف رابط جاهز هنا لاحقاً</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="platform-card">
+            <div class="platform-top">
+              <div class="platform-logo">🛍</div>
+              <div>
+                <div class="platform-name">نون فود</div>
+                <div class="platform-note">
+                  خيارات مرنة للطلب عبر نون.
+                </div>
+              </div>
+            </div>
+            <div>
+              <a href="#" target="_blank" class="platform-link">
+                <span>أضف رابط نون فود هنا لاحقاً</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- آراء العملاء + أرقام بسيطة -->
+      <section>
+        <div class="section-header">
+          <div>
+            <div class="section-title">ماذا يقول عملاؤنا؟</div>
+            <div class="section-subtitle">
+              آراء حقيقية وتجارب متكررة هي سر استمرار حنيني سبشل.
+            </div>
+          </div>
+          <div class="pill">تقييمات وتجارب</div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-text">
+              "أفضل حلى حنيني ذقته، نكهة واضحة ومتوازنة، والتغليف مرتب جداً. أصبح خيار ثابت مع القهوة في عطلة نهاية الأسبوع."
+            </div>
+            <div class="review-meta">
+              <span>عميل من الرياض – عبر هنقرستيشن</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi-card">
+              <div class="kpi-value">+٩٨٪</div>
+              <div>رضا العملاء في تقييمات الطلبات</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">٤٫٨/٥</div>
+              <div>متوسط التقييم في المنصات</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">+٣ سنوات</div>
+              <div>تجربة في تقديم الأكل المنزلي</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="section-header">
+          <div>
+            <div class="section-title">الأسئلة الشائعة</div>
+            <div class="section-subtitle">
+              إجابات سريعة على أكثر الأسئلة تكراراً من عملائنا.
+            </div>
+          </div>
+          <div class="pill">دعم وتجربة عميل</div>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">هل توفّرون طلبات خاصة للمناسبات؟</div>
+            <div class="faq-a">
+              نعم، يمكن التنسيق عبر واتساب لطلبات خاصة مثل: قهوة مناسبات، علب ضيافة، وصواني فطور أو حلا بكميات كبيرة.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">هل الأسعار نفسها في جميع المنصات؟</div>
+            <div class="faq-a">
+              الأسعار الأساسية متقاربة، وقد تختلف العروض والرسوم بحسب سياسة كل منصة (هنقرستيشن، جاهز، نون فود).
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">هل المنيو في الموقع محدث دائماً؟</div>
+            <div class="faq-a">
+              هذا الموقع يعرض نموذج للمنيو فقط. المنيو المحدث دائماً هو الموجود داخل منصة هنقرستيشن.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">كيف أتواصل معكم مباشرة؟</div>
+            <div class="faq-a">
+              يمكن التواصل عبر زر واتساب في أسفل الصفحة أو من خلال أرقام التواصل المرفقة في صفحات المنصات.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-row">
+          <div>
+            © <span id="year"></span> حنيني سبشل – Hanini Special. جميع الحقوق محفوظة.
+          </div>
+          <div class="footer-links">
+            <a href="#top">العودة للأعلى</a>
+            <a href="https://wa.me/966500000000" target="_blank">واتساب</a>
+          </div>
+        </div>
+      </footer>
 
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- منصات الطلب -->
-<section id="order-platforms">
-  <div class="container">
-    <h2 class="section-title">من وين تطلب وجبتك؟</h2>
-    <p class="section-subtitle">اختر المنصة المناسبة لك.</p>
-
-    <div class="platforms-grid">
-
-      <div class="platform-card">
-        <img src="images/hungerstation.png">
-        <p>اطلب الآن من هنقرستيشن</p>
-        <a href="https://hungerstation.com/sa-ar/restaurant/riyadh/al-muzahimiyah/112830" target="_blank" class="order-btn">اطلب من هنقرستيشن</a>
-      </div>
-
-      <div class="platform-card">
-        <img src="images/jahez.png">
-        <p>رابط جاهز سيضاف لاحقاً</p>
-        <a href="#" class="order-btn">اطلب من جاهز</a>
-      </div>
-
-      <div class="platform-card">
-        <img src="images/noonfood.png">
-        <p>رابط نون فود سيضاف لاحقاً</p>
-        <a href="#" class="order-btn">اطلب من نون فود</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- واتساب -->
-<a class="whatsapp-btn" href="https://wa.me/966506222287">واتساب: 0506222287</a>
-
-<!-- زر العودة للأعلى -->
-<div id="scrollTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
-
-<footer>
-  © 2025 حنيني سبشل – جميع الحقوق محفوظة
-</footer>
-
-<script>
-  // سلايدر الهيرو
-  let slides = document.querySelectorAll(".hero-slide");
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 3500);
-
-  // موشن بطاقات الأطباق
-  const cards = document.querySelectorAll(".dish-card");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in-view"); });
-  });
-  cards.forEach(c => observer.observe(c));
-
-  // زر العودة للأعلى
-  window.addEventListener("scroll", () => {
-    document.getElementById("scrollTop").classList.toggle("show", window.scrollY > 400);
-  });
-</script>
-
+  <script>
+    // تحديث سنة الحقوق تلقائياً
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
