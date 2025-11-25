@@ -1,291 +1,1236 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حنيني سبشل | أطباق منزلية بطابع سعودي</title>
+  <meta name="description" content="حن حنيني سبشل يقدم أطباق وحلويات منزلية بطابع سعودي أصيل. اطلب أونلاين لبيتك أو مناسباتك الخاصة واستمتع بنكهات بيتية فاخرة.">
 
-<title>حنيني سبشل | نكهات بيتية بطابع سعودي</title>
+  <!-- خط تاوجوال -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F2EA;
+      --bg-soft: #F1E8DA;
+      --card: #FFFFFF;
+      --accent: #C8A861;
+      --accent-soft: rgba(200,168,97,0.15);
+      --text-main: #5C4633;
+      --text-muted: #7A6A58;
+      --border-soft: #E3D7C6;
+      --radius-xl: 1.5rem;
+      --radius-lg: 1rem;
+      --shadow-soft: 0 10px 24px rgba(92,70,51,0.12);
+      --shadow-btn: 0 10px 22px rgba(200,168,97,0.35);
+      --transition-fast: 0.25s ease;
+      --max-width: 1120px;
+    }
 
-<style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* ========================= */
-/*     الثيم الفاتح الجديد    */
-/* ========================= */
+    body {
+      margin: 0;
+      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fdf8f1 0, #F7F2EA 40%, #f1e3ce 100%);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
 
-:root {
-  --bg: #F7F2EA;              /* خلفية بيج فاتح */
-  --bg-soft: #F1E8DA;
-  --card: #FFFFFF;
-  --accent: #C8A861;          /* ذهبي تراثي */
-  --accent-soft: rgba(200,168,97,0.15);
-  --text-main: #5C4633;       /* بني داكن */
-  --text-muted: #7A6A58;      /* بني فاتح */
-  --border-soft: #E3D7C6;
-  --radius-xl: 1.5rem;
-  --radius-lg: 1rem;
-  --shadow-soft: 0 10px 24px rgba(92,70,51,0.12);
-  --shadow-btn: 0 10px 22px rgba(200,168,97,0.35);
-  --transition-fast: 0.25s ease;
-  --max-width: 1120px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-body {
-  font-family: "Tajawal", sans-serif;
-  background: var(--bg);
-  color: var(--text-main);
-  margin: 0;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-/* ========================= */
-/*           الهيدر          */
-/* ========================= */
+    .page {
+      min-height: 100vh;
+    }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-soft);
-}
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
 
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* الهيدر */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-soft);
+    }
 
-.nav-links a {
-  margin: 0 0.6rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  transition: var(--transition-fast);
-}
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-.nav-links a:hover {
-  color: var(--text-main);
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
 
-/* ========================= */
-/*     أزرار الموقع الجديدة  */
-/* ========================= */
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 10%, #fff7da, #E3C57F, #C8A861);
+      border: 2px solid #fef6e7;
+      box-shadow: 0 0 18px rgba(200,168,97,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #5C4633;
+      font-size: 1.2rem;
+    }
 
-.btn-primary {
-  padding: 0.55rem 1.4rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #E3C57F, #C8A861);
-  color: white;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
+    .brand-main {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+    }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-btn);
-}
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
 
-.btn-outline {
-  padding: 0.55rem 1.4rem;
-  border-radius: 999px;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+    }
 
-.btn-outline:hover {
-  background: var(--accent);
-  color: white;
-}
+    .nav-links a {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
 
-/* ========================= */
-/*       سلايدر الهيرو       */
-/* ========================= */
+    .nav-links a:hover {
+      border-color: var(--border-soft);
+      background: rgba(255,255,255,0.9);
+      color: var(--text-main);
+    }
 
-.hero-slider {
-  position: relative;
-  width: 100%;
-  height: 520px;
-  overflow: hidden;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-  margin-top: 1.4rem;
-}
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
 
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
+    .badge-soft {
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(200,168,97,0.6);
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
 
-.hero-slide.active {
-  opacity: 1;
-}
+    .btn-primary,
+    .btn-outline {
+      border-radius: 999px;
+      font-size: 0.9rem;
+      padding: 0.55rem 1.3rem;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: var(--transition-fast);
+      border: none;
+    }
 
-.hero-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .btn-primary {
+      background: linear-gradient(135deg, #E3C57F, #C8A861);
+      color: #fff;
+      box-shadow: var(--shadow-btn);
+    }
 
-/* نص الهيرو */
-.hero-overlay {
-  position: absolute;
-  top: 30%;
-  right: 6%;
-  z-index: 10;
-  max-width: 420px;
-}
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 28px rgba(200,168,97,0.5);
+    }
 
-.hero-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-main);
-}
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
 
-.hero-title span {
-  color: var(--accent);
-}
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #fff;
+    }
 
-.hero-subtitle {
-  margin: 0.8rem 0;
-  color: var(--text-muted);
-  font-size: 1rem;
-}
+    /* الهيرو - سلايدر 3 صور */
+    .hero {
+      margin-top: 1.5rem;
+      position: relative;
+    }
 
-/* ========================= */
-/*        الأقسام العامة     */
-/* ========================= */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+    }
 
-section {
-  margin-top: 2rem;
-}
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
 
-.section-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text-main);
-}
+    .hero-slide.active {
+      opacity: 1;
+    }
 
-.section-subtitle {
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* يناسب 1920x1080 */
+    }
 
-/* ========================= */
-/*         الكروت            */
-/* ========================= */
+    .hero-overlay {
+      position: absolute;
+      top: 18%;
+      right: 6%;
+      max-width: 420px;
+      background: rgba(247, 242, 234, 0.92);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 8px 22px rgba(92,70,51,0.18);
+    }
 
-.feature-card,
-.menu-card,
-.step-card,
-.platform-card,
-.review-card,
-.kpi-card,
-.faq-item {
-  background: var(--card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-soft);
-  padding: 1rem;
-  box-shadow: var(--shadow-soft);
-}
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
 
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 1rem;
-}
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0.2rem 0 0.4rem;
+      color: var(--text-main);
+    }
 
-/* ========================= */
-/*         الفوتر            */
-/* ========================= */
+    .hero-title span {
+      color: var(--accent);
+    }
 
-footer {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-soft);
-  text-align: center;
-  color: var(--text-muted);
-}
+    .hero-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
 
-/* ========================= */
-/*         استجابة           */
-/* ========================= */
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
 
-@media(max-width:768px){
-  .grid-4{
-    grid-template-columns: repeat(2,1fr);
-  }
-  .hero-slider{
-    height: 380px;
-  }
-  .hero-overlay{
-    top: 28%;
-    right: 5%;
-    max-width: 90%;
-  }
-}
-</style>
+    .hero-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .hero-dots {
+      position: absolute;
+      left: 1.3rem;
+      bottom: 1.2rem;
+      display: flex;
+      gap: 0.3rem;
+      z-index: 5;
+    }
+
+    .hero-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(247, 242, 234, 0.5);
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .hero-dot.active {
+      background: var(--accent);
+      border-color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* الأقسام العامة */
+    main section {
+      margin-top: 2.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 480px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* المميزات */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+    }
+
+    .badge-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(200,168,97,0.7);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* المنيو المختصر */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .menu-card {
+      display: grid;
+      grid-template-columns: 1.1fr 1.5fr;
+      gap: 0.7rem;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.8rem;
+    }
+
+    .menu-img {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #fdf8f1;
+    }
+
+    .menu-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .menu-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .menu-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* اختر طلبكم - المناسبات الخاصة */
+    .special-orders-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .special-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .special-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .special-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .special-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* قسم قيمنا */
+    .reviews-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1rem;
+    }
+
+    .reviews-list {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .review-item {
+      border-bottom: 1px dashed var(--border-soft);
+      padding: 0.4rem 0;
+    }
+
+    .review-item:last-child {
+      border-bottom: none;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    .review-name {
+      font-weight: 700;
+    }
+
+    .review-rating {
+      color: #eab308;
+      font-size: 0.8rem;
+    }
+
+    .review-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .review-date {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .review-form {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .form-row label {
+      font-size: 0.8rem;
+      color: var(--text-main);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.45rem 0.55rem;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border-soft);
+      font-family: inherit;
+      font-size: 0.85rem;
+      background: #fdf8f1;
+      color: var(--text-main);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    /* حابين نسمع منكم */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-info-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* شركاء النجاح */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .partner-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.8rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .partner-logo {
+      height: 42px;
+      margin: 0 auto 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* واتساب عائم */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.4rem;
+      left: 1.2rem;
+      z-index: 60;
+    }
+
+    .whatsapp-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 18px 36px rgba(22,163,74,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ecfdf5;
+      font-size: 1.7rem;
+      border: 3px solid #bbf7d0;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 22px 42px rgba(22,163,74,0.9);
+    }
+
+    /* الفوتر */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    .social-links a {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      transition: var(--transition-fast);
+      font-size: 0.9rem;
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* ريسبونسيف */
+    @media (max-width: 960px) {
+      .hero-overlay {
+        top: 8%;
+        right: 5%;
+        max-width: 60%;
+      }
+      .hero-slider {
+        height: 420px;
+      }
+      .grid-4,
+      .menu-grid,
+      .special-orders-grid,
+      .partners-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .reviews-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-slider {
+        height: 360px;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: auto 5% 8% 5%;
+        max-width: 90%;
+      }
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      .grid-4,
+      .menu-grid,
+      .special-orders-grid,
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      .whatsapp-float {
+        left: 1rem;
+        bottom: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- زر واتساب عائم (طلبات خاصة) -->
+  <div class="whatsapp-float">
+    <a class="whatsapp-btn"
+       href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%B5%20%D9%84%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
+       target="_blank" aria-label="تواصل عبر واتساب">
+      ☏
+    </a>
+  </div>
 
-<header>
-  <nav class="nav">
-    <div class="brand">حنيني سبشل</div>
-    <div class="nav-links">
-      <a href="#menu">المنيو</a>
-      <a href="#about">من نحن</a>
-      <a href="#order">الطلب</a>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-logo">ح</div>
+        <div>
+          <div class="brand-main">حنيني سبشل</div>
+          <div class="brand-sub">نكهات بيتية بطابع سعودي خاص</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">عن حنيني</a>
+        <a href="#menu">المنيو</a>
+        <a href="#special-orders">اختر طلبكم</a>
+        <a href="#reviews">قيّمنا</a>
+        <a href="#contact">حابين نسمع منكم</a>
+        <a href="#partners">شركاء النجاح</a>
+      </div>
+
+      <div class="nav-cta">
+        <span class="badge-soft">أسرة منتجة</span>
+        <a href="#special-orders" class="btn-primary">اطلب للمناسبات</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <!-- هيرو -->
+      <section class="hero" id="top">
+        <div class="hero-slider">
+          <!-- استبدل الصور فعلياً داخل مجلد images بنفس الأسماء -->
+          <div class="hero-slide active">
+            <img src="images/hero-1.jpg" alt="عائلة سعودية تستمتع بمنتجات حنيني سبشل في منتزه">
+          </div>
+          <div class="hero-slide">
+            <img src="images/hero-2.jpg" alt="مائدة حلى وقهوة من حنيني سبشل للمناسبات">
+          </div>
+          <div class="hero-slide">
+            <img src="images/hero-3.jpg" alt="جلسة عائلية مع ثلاجة شاي وحلويات حنيني سبشل">
+          </div>
+
+          <div class="hero-overlay">
+            <div class="hero-eyebrow">من مطبخ البيت إلى مناسباتكم الخاصة ✨</div>
+            <h1 class="hero-title">
+              أطباق <span>حنيني سبشل</span> لبيتك ومناسباتك
+            </h1>
+            <p class="hero-subtitle">
+              نعدّ لكم أطباقاً وحلويات منزلية بطابع سعودي أصيل، جاهزة للضيافة اليومية
+              أو البوفيهات الخاصة للمناسبات، مع خيارات خاصة خارج منصات التوصيل.
+            </p>
+            <div class="hero-cta-row">
+              <a href="#special-orders" class="btn-primary">اختر طلبك للمناسبة</a>
+              <a href="https://wa.me/966570905999" target="_blank" class="btn-outline">تواصل واتساب مباشرة</a>
+            </div>
+            <div class="hero-meta">
+              <span>✅ تجهيز طازج يومياً</span>
+              <span>•</span>
+              <span>مثالية للعائلة والضيوف</span>
+            </div>
+          </div>
+
+          <div class="hero-dots">
+            <div class="hero-dot active" data-index="0"></div>
+            <div class="hero-dot" data-index="1"></div>
+            <div class="hero-dot" data-index="2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- لماذا حنيني سبشل مختلف -->
+      <section id="about">
+        <div class="section-header">
+          <div>
+            <div class="section-title">ليش حنيني سبشل مختلف؟</div>
+            <div class="section-subtitle">
+              نركز على الجودة والهوية السعودية في كل طبق، من اختيار المكونات حتى طريقة التقديم والضيافة.
+            </div>
+          </div>
+          <div class="pill">مميزات التجربة</div>
+        </div>
+
+        <div class="grid-4">
+          <div class="feature-card">
+            <div class="badge-number">١</div>
+            <div class="feature-title">نكهات بيتية أصيلة</div>
+            <div class="feature-text">
+              وصفات عائلية موروثة تم تطويرها بعناية، تناسب جلسات القهوة والمناسبات الخاصة.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٢</div>
+            <div class="feature-title">جودة وتغليف راقي</div>
+            <div class="feature-text">
+              نعتني باختيار المكونات والتغليف، لتصل إليك الأطباق بأفضل شكل ونكهة.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٣</div>
+            <div class="feature-title">خيارات خاصة للمناسبات</div>
+            <div class="feature-text">
+              بوفيهات، ضيافة قهوة، صناديق هدايا، وتنسيق كامل للمناسبات الصغيرة والمتوسطة.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="badge-number">٤</div>
+            <div class="feature-title">مرونة في الطلب</div>
+            <div class="feature-text">
+              يمكنك الطلب عبر المنصات أو مباشرة للمناسبات الخاصة بتواصل شخصي.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المنيو المختصر -->
+      <section id="menu">
+        <div class="section-header">
+          <div>
+            <div class="section-title">نماذج من منيو حنيني سبشل</div>
+            <div class="section-subtitle">
+              هذه نماذج لعرض طريقة التقديم. يمكنك تخصيص المنيو حسب نوع المناسبة وعدد الضيوف.
+            </div>
+          </div>
+          <div class="pill">منيو تجريبي</div>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-1.jpg" alt="حلى حنيني الخاص">
+            </div>
+            <div>
+              <div class="menu-title">حلى حنيني الخاص</div>
+              <div class="menu-desc">
+                حنيني دافئ بطابع نجدي، يقدم في أواني جميلة، مناسب لضيافة القهوة.
+              </div>
+              <div class="menu-meta">متوفر بعلب فردية أو صواني عائلية.</div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-2.jpg" alt="بوكس ضيافة قهوة">
+            </div>
+            <div>
+              <div class="menu-title">بوكس ضيافة قهوة</div>
+              <div class="menu-desc">
+                تشكيلة من الحلى والمعجنات الصغيرة تناسب الجلسات اليومية أو الضيوف.
+              </div>
+              <div class="menu-meta">إمكانية تخصيص المحتوى حسب ذوقك.</div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-img">
+              <img src="images/menu-3.jpg" alt="صينية فطور عائلية">
+            </div>
+            <div>
+              <div class="menu-title">صينية فطور عائلية</div>
+              <div class="menu-desc">
+                فطور مرتب للعائلة أو ضيوف الصباح، جاهز للتقديم مباشرة.
+              </div>
+              <div class="menu-meta">بالطلب المسبق للمناسبات الخاصة.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- اختر طلبكم - طلبات خاصة -->
+      <section id="special-orders">
+        <div class="section-header">
+          <div>
+            <div class="section-title">اختر طلبكم للمناسبات الخاصة</div>
+            <div class="section-subtitle">
+              اطلب مباشرة من حنيني سبشل للمناسبات بدون المرور على هنقرستيشن أو جاهز أو نون فود.
+            </div>
+          </div>
+          <div class="pill">طلبات خاصة خارج المنصات</div>
+        </div>
+
+        <div class="special-orders-grid">
+          <div class="special-card">
+            <div>
+              <div class="special-title">بوفيه مناسبات صغيرة</div>
+              <div class="special-text">
+                بوفيه حلى ومعجنات وقهوة لمناسبات المنزل أو الاستراحات بعدد ضيوف من ١٠–٣٠ شخص.
+              </div>
+              <div class="special-meta">يمكن تخصيص الأصناف حسب المناسبة.</div>
+            </div>
+            <a class="btn-outline"
+               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D9%88%D9%81%D9%8A%D9%87%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
+               target="_blank">
+              اطلب هذا البوفيه
+            </a>
+          </div>
+
+          <div class="special-card">
+            <div>
+              <div class="special-title">ضيافة قهوة وشاي</div>
+              <div class="special-text">
+                تجهيز كامل لحلى القهوة مع ثلاجات شاي وقهوة مناسبة للجلسات العائلية.
+              </div>
+              <div class="special-meta">مثالي لليالي الشتاء والجمعات.</div>
+            </div>
+            <a class="btn-outline"
+               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%82%D9%87%D9%88%D8%A9%20%D9%88%D8%B4%D8%A7%D9%8A%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
+               target="_blank">
+              اطلب ضيافة القهوة
+            </a>
+          </div>
+
+          <div class="special-card">
+            <div>
+              <div class="special-title">صناديق هدايا وضيافة</div>
+              <div class="special-text">
+                صناديق أنيقة تحتوي على حلى أو ضيافة جاهزة لتقديمها كهدية أو لضيوفك.
+              </div>
+              <div class="special-meta">إمكانية إضافة كرت خاص وعبارات.</div>
+            </div>
+            <a class="btn-outline"
+               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B5%D9%86%D8%AF%D9%88%D9%82%20%D9%87%D8%AF%D9%8A%D8%A9%20%D8%A3%D9%88%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
+               target="_blank">
+              اطلب صندوق هدية
+            </a>
+          </div>
+
+          <div class="special-card">
+            <div>
+              <div class="special-title">طلبات خاصة حسب رغبتك</div>
+              <div class="special-text">
+                عندك فكرة معينة أو نمط ضيافة مختلف؟ راسلنا وحدد عدد الضيوف ونوع المناسبة.
+              </div>
+              <div class="special-meta">سنتواصل معك لترتيب التفاصيل.</div>
+            </div>
+            <a class="btn-outline"
+               href="https://wa.me/966570905999?text=%D9%84%D8%AF%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%B5%20%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9"
+               target="_blank">
+              اطلب طلباً خاصاً
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم قيمنا -->
+      <section id="reviews">
+        <div class="section-header">
+          <div>
+            <div class="section-title">قيّم تجربتك مع حنيني سبشل</div>
+            <div class="section-subtitle">
+              نعتز بكل رأي وتقييم. اكتب تقييمك وسيظهر مباشرة على هذه الصفحة (محفوظ على جهازك).
+            </div>
+          </div>
+          <div class="pill">آراء العملاء</div>
+        </div>
+
+        <div class="reviews-layout">
+          <div class="reviews-list" id="reviewsList">
+            <!-- التقييمات تُضاف هنا عبر جافاسكربت -->
+          </div>
+
+          <div class="review-form">
+            <form id="reviewForm">
+              <div class="form-row">
+                <label style="width:100%;">
+                  الاسم (اختياري):
+                  <input type="text" name="name" placeholder="مثال: أم محمد">
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="flex:1 1 120px;">
+                  التقييم:
+                  <select name="rating" required>
+                    <option value="5">5 نجوم - ممتاز</option>
+                    <option value="4">4 نجوم - جيد جداً</option>
+                    <option value="3">3 نجوم - جيد</option>
+                    <option value="2">2 نجوم - مقبول</option>
+                    <option value="1">1 نجمة - يحتاج تحسين</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="width:100%;">
+                  رأيك عن التجربة:
+                  <textarea name="text" required placeholder="احك لنا عن تجربتك باختصار..."></textarea>
+                </label>
+              </div>
+              <button type="submit" class="btn-primary">إرسال التقييم</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- حابين نسمع منكم -->
+      <section id="contact">
+        <div class="section-header">
+          <div>
+            <div class="section-title">حابين نسمع منكم</div>
+            <div class="section-subtitle">
+              ملاحظاتكم واقتراحاتكم تساعدنا نطوّر حنيني سبشل ونخدمكم بشكل أجمل.
+            </div>
+          </div>
+          <div class="pill">نموذج التواصل</div>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <!-- نموذج يرسل للإيميل عبر mailto (مؤقت) -->
+            <form
+              action="mailto:abdulaziz.algharawi@gmail.com"
+              method="POST"
+              enctype="text/plain"
+            >
+              <div class="form-row">
+                <label style="width:100%;">
+                  الاسم:
+                  <input type="text" name="الاسم" required>
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="width:100%;">
+                  البريد الإلكتروني:
+                  <input type="email" name="البريد" required>
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="width:100%;">
+                  عنوان الرسالة:
+                  <input type="text" name="العنوان" placeholder="مثال: ملاحظات على بوكس الضيافة">
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="width:100%;">
+                  رسالتك:
+                  <textarea name="الرسالة" required placeholder="اكتب ملاحظاتك أو اقتراحاتك هنا..."></textarea>
+                </label>
+              </div>
+              <button type="submit" class="btn-primary">إرسال الملاحظة عبر الإيميل</button>
+            </form>
+          </div>
+
+          <aside class="contact-info-card">
+            <strong>قنوات التواصل المباشر:</strong>
+            <p>
+              📱 واتساب / جوال: <br>
+              <a href="https://wa.me/966570905999" target="_blank">0570905999</a>
+            </p>
+            <p>
+              📧 البريد الإلكتروني: <br>
+              <a href="mailto:abdulaziz.algharawi@gmail.com">abdulaziz.algharawi@gmail.com</a>
+            </p>
+            <p>
+              يمكنك دائماً التواصل معنا لترتيب الطلبات الخاصة، أو إرسال أي ملاحظة
+              حول الجودة، التغليف، أو تجربة الضيافة.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- شركاء النجاح -->
+      <section id="partners">
+        <div class="section-header">
+          <div>
+            <div class="section-title">شركاء النجاح</div>
+            <div class="section-subtitle">
+              نفخر بالتعاون مع جهات وشركاء يشاركوننا نفس الاهتمام بالجودة والضيافة.
+            </div>
+          </div>
+          <div class="pill">٤ جهات رئيسية</div>
+        </div>
+
+        <div class="partners-grid">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="images/partner-1.png" alt="شريك النجاح الأول">
+            </div>
+            <div>شريك النجاح ١</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="images/partner-2.png" alt="شريك النجاح الثاني">
+            </div>
+            <div>شريك النجاح ٢</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="images/partner-3.png" alt="شريك النجاح الثالث">
+            </div>
+            <div>شريك النجاح ٣</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="images/partner-4.png" alt="شريك النجاح الرابع">
+            </div>
+            <div>شريك النجاح ٤</div>
+          </div>
+        </div>
+      </section>
     </div>
-    <a class="btn-primary" href="#order">اطلب الآن</a>
-  </nav>
-</header>
+  </main>
 
-<div class="hero-slider">
-  <div class="hero-slide active">
-    <img src="images/hero-1.jpg">
-  </div>
-  <div class="hero-slide">
-    <img src="images/hero-2.jpg">
-  </div>
+  <!-- فوتر -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> حنيني سبشل – Hanini Special. جميع الحقوق محفوظة.
+      </div>
+      <div>
+        تواصل: واتساب <a href="https://wa.me/966570905999" target="_blank">0570905999</a> –
+        إيميل <a href="mailto:abdulaziz.algharawi@gmail.com">abdulaziz.algharawi@gmail.com</a>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="إنستغرام">IG</a>
+        <a href="#" aria-label="سناب شات">SC</a>
+        <a href="#" aria-label="تويتر X">X</a>
+        <a href="https://wa.me/966570905999" target="_blank" aria-label="واتساب">WA</a>
+      </div>
+    </div>
+  </footer>
 
-  <div class="hero-overlay">
-    <h1 class="hero-title">
-      أطباق <span>حنيني سبشل</span> بطابع سعودي أصيل
-    </h1>
-    <p class="hero-subtitle">
-      نكهات بيتية تراثية محضّرة بحب — توصل لعندكم بكل الدلال.
-    </p>
-    <a class="btn-primary" href="#order">اطلب الآن</a>
-  </div>
-</div>
+  <script>
+    // سنة الفوتر
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- سكربت السلايدر -->
-<script>
-let index = 0;
-const slides = document.querySelectorAll(".hero-slide");
+    // سلايدر الهيرو (3 صور)
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let currentSlide = 0;
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000);
-</script>
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+      currentSlide = index;
+    }
 
-<footer>
-  © 2025 حنيني سبشل — جميع الحقوق محفوظة.
-</footer>
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        showSlide(idx);
+      });
+    });
 
+    setInterval(() => {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }, 5000);
+
+    // قسم قيمنا - تخزين محلي في المتصفح
+    const reviewsKey = 'hanini_reviews_v1';
+    const reviewsListEl = document.getElementById('reviewsList');
+    const reviewForm = document.getElementById('reviewForm');
+
+    function loadReviews() {
+      try {
+        const stored = localStorage.getItem(reviewsKey);
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveReviews(reviews) {
+      try {
+        localStorage.setItem(reviewsKey, JSON.stringify(reviews));
+      } catch (e) {
+        // تجاهل الخطأ إذا التخزين غير متاح
+      }
+    }
+
+    function renderReviews() {
+      const reviews = loadReviews();
+      reviewsListEl.innerHTML = '';
+      if (reviews.length === 0) {
+        reviewsListEl.innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted);margin:0;">لم يتم إضافة تقييمات بعد. كن أول من يشارك رأيه 🤍</p>';
+        return;
+      }
+      reviews.slice().reverse().forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'review-item';
+        item.innerHTML = `
+          <div class="review-header">
+            <span class="review-name">${r.name || 'عميل حنيني'}</span>
+            <span class="review-rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+          </div>
+          <div class="review-text">${r.text}</div>
+          <div class="review-date">${r.date}</div>
+        `;
+        reviewsListEl.appendChild(item);
+      });
+    }
+
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(reviewForm);
+      const name = (formData.get('name') || '').toString().trim();
+      const rating = Number(formData.get('rating') || 5);
+      const text = (formData.get('text') || '').toString().trim();
+
+      if (!text) return;
+
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('ar-SA', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+
+      const reviews = loadReviews();
+      reviews.push({ name, rating, text, date: dateStr });
+      saveReviews(reviews);
+      renderReviews();
+      reviewForm.reset();
+    });
+
+    renderReviews();
+  </script>
 </body>
 </html>
