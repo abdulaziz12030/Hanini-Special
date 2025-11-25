@@ -190,23 +190,24 @@
       background: #fff;
     }
 
-    .hero-slide {
-  position: relative; /* كان absolute */
+  .hero-slide {
+  position: relative;
   opacity: 0;
   transition: opacity 1s ease;
-  height: auto;       /* إضافة */
-      
-    }
+  height: auto;
+}
 
-    .hero-slide.active {
-      opacity: 1;
-    }
+.hero-slide.active {
+  opacity: 1;
+}
 
-   .hero-slide img {
+.hero-slide img {
   width: 100%;
-  height: auto;        /* بدل 100% */
-  object-fit: contain; /* أو احذفها كلياً */
+  height: auto;
+  object-fit: contain; /* أو احذفها بالكامل */
   display: block;
+}
+
 }
 
     }
