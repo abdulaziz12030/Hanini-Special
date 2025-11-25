@@ -191,20 +191,24 @@
     }
 
     .hero-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 1s ease;
+  position: relative; /* كان absolute */
+  opacity: 0;
+  transition: opacity 1s ease;
+  height: auto;       /* إضافة */
+      
     }
 
     .hero-slide.active {
       opacity: 1;
     }
 
-    .hero-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* يناسب 1920x1080 */
+   .hero-slide img {
+  width: 100%;
+  height: auto;        /* بدل 100% */
+  object-fit: contain; /* أو احذفها كلياً */
+  display: block;
+}
+
     }
 
     .hero-dots {
