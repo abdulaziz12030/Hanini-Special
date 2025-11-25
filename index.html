@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>حنيني سبشل | أطباق منزلية بطابع سعودي</title>
-  <meta name="description" content="حن حنيني سبشل يقدم أطباق وحلويات منزلية بطابع سعودي أصيل. اطلب أونلاين لبيتك أو مناسباتك الخاصة واستمتع بنكهات بيتية فاخرة.">
+  <title>حنيني سبشل | أطباق وحلويات منزلية بطابع سعودي</title>
+  <meta name="description" content="حنيني سبشل يقدم أطباق وحلويات منزلية بطابع سعودي أصيل. اطلب أونلاين عبر منصات التوصيل أو نسّق طلبك الخاص للمناسبات عبر الواتساب.">
 
-  <!-- خط تاوجوال -->
+  <!-- خط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -27,9 +27,7 @@
       --max-width: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,22 +35,13 @@
       background: radial-gradient(circle at top, #fdf8f1 0, #F7F2EA 40%, #f1e3ce 100%);
       color: var(--text-main);
       line-height: 1.8;
+      scroll-behavior: smooth;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-    }
-
+    .page { min-height: 100vh; }
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -64,7 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-soft);
     }
@@ -102,12 +91,12 @@
 
     .brand-main {
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       letter-spacing: 0.04em;
     }
 
     .brand-sub {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
 
@@ -121,11 +110,10 @@
     .nav-links a {
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
-      color: var(--text-muted);
       border: 1px solid transparent;
+      color: var(--text-muted);
       transition: var(--transition-fast);
     }
-
     .nav-links a:hover {
       border-color: var(--border-soft);
       background: rgba(255,255,255,0.9);
@@ -148,8 +136,7 @@
       white-space: nowrap;
     }
 
-    .btn-primary,
-    .btn-outline {
+    .btn-primary {
       border-radius: 999px;
       font-size: 0.9rem;
       padding: 0.55rem 1.3rem;
@@ -160,34 +147,37 @@
       gap: 0.35rem;
       transition: var(--transition-fast);
       border: none;
-    }
-
-    .btn-primary {
       background: linear-gradient(135deg, #E3C57F, #C8A861);
       color: #fff;
       box-shadow: var(--shadow-btn);
     }
-
     .btn-primary:hover {
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 14px 28px rgba(200,168,97,0.5);
     }
 
     .btn-outline {
+      border-radius: 999px;
+      font-size: 0.85rem;
+      padding: 0.5rem 1.1rem;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: var(--transition-fast);
+      border: 1px solid var(--accent);
       background: transparent;
       color: var(--accent);
-      border: 1px solid var(--accent);
     }
-
     .btn-outline:hover {
       background: var(--accent);
       color: #fff;
     }
 
-    /* الهيرو - سلايدر 3 صور */
-    .hero {
-      margin-top: 1.5rem;
-      position: relative;
+    /* هيرو – صور فقط */
+    .hero-wrap {
+      width: 100%;
     }
 
     .hero-slider {
@@ -195,7 +185,7 @@
       width: 100%;
       height: 520px;
       overflow: hidden;
-      border-radius: var(--radius-xl);
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
       box-shadow: var(--shadow-soft);
       background: #fff;
     }
@@ -217,65 +207,12 @@
       object-fit: cover; /* يناسب 1920x1080 */
     }
 
-    .hero-overlay {
-  position: absolute;
-  top: 18%;
-  right: 6%;
-  max-width: 420px;
-  padding: 0rem;      /* بدون خلفية إطلاقاً */
-  background: none;   /* إلغاء الخلفية */
-  box-shadow: none;   /* إلغاء الظل */
-}
-.hero-title,
-.hero-subtitle,
-.hero-eyebrow {
-  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
-}
-
-    .hero-eyebrow {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 0.2rem 0 0.4rem;
-      color: var(--text-main);
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
     .hero-dots {
       position: absolute;
-      left: 1.3rem;
-      bottom: 1.2rem;
+      right: 1.5rem;
+      bottom: 1.4rem;
       display: flex;
-      gap: 0.3rem;
+      gap: 0.35rem;
       z-index: 5;
     }
 
@@ -283,7 +220,7 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.9);
       background: rgba(247, 242, 234, 0.5);
       cursor: pointer;
       transition: var(--transition-fast);
@@ -316,7 +253,7 @@
     .section-subtitle {
       font-size: 0.9rem;
       color: var(--text-muted);
-      max-width: 480px;
+      max-width: 520px;
     }
 
     .pill {
@@ -329,223 +266,187 @@
       white-space: nowrap;
     }
 
-    /* المميزات */
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 1rem;
-    }
-
-    .feature-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem;
-    }
-
-    .badge-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(200,168,97,0.7);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .feature-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .feature-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* المنيو المختصر */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 1rem;
-    }
-
-    .menu-card {
-      display: grid;
-      grid-template-columns: 1.1fr 1.5fr;
-      gap: 0.7rem;
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.8rem;
-    }
-
-    .menu-img {
-      border-radius: 0.9rem;
-      overflow: hidden;
-      border: 1px solid var(--border-soft);
-      background: #fdf8f1;
-    }
-
-    .menu-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .menu-desc {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .menu-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* اختر طلبكم - المناسبات الخاصة */
-    .special-orders-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 1rem;
-    }
-
-    .special-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .special-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .special-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .special-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* قسم قيمنا */
-    .reviews-layout {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 1rem;
-    }
-
-    .reviews-list {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem;
-      max-height: 280px;
-      overflow-y: auto;
-    }
-
-    .review-item {
-      border-bottom: 1px dashed var(--border-soft);
-      padding: 0.4rem 0;
-    }
-
-    .review-item:last-child {
-      border-bottom: none;
-    }
-
-    .review-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-    }
-
-    .review-name {
-      font-weight: 700;
-    }
-
-    .review-rating {
-      color: #eab308;
-      font-size: 0.8rem;
-    }
-
-    .review-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.1rem;
-    }
-
-    .review-date {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-top: 0.1rem;
-    }
-
-    .review-form {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .form-row label {
-      font-size: 0.8rem;
-      color: var(--text-main);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 0.45rem 0.55rem;
-      border-radius: 0.6rem;
-      border: 1px solid var(--border-soft);
-      font-family: inherit;
-      font-size: 0.85rem;
-      background: #fdf8f1;
-      color: var(--text-main);
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    /* حابين نسمع منكم */
-    .contact-grid {
+    /* من نحن / ليش حنيني سبشل مختلف؟ */
+    .about-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 1rem;
     }
 
-    .contact-info-card {
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+      font-size: 0.85rem;
+    }
+
+    .about-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    /* الأكثر طلباً */
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .top-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-fast);
+    }
+
+    .top-card img {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .top-content {
+      padding: 0.7rem 0.9rem 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .top-title {
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .top-desc {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .stars {
+      color: #eab308;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+    }
+
+    .top-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(92,70,51,0.16);
+    }
+
+    /* كيف توصلكم أكلاتنا */
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .delivery-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .delivery-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .delivery-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .delivery-text {
+      color: var(--text-muted);
+    }
+
+    .delivery-link {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* نموذج الطلب الخاص (داخل القسم الرابع) */
+    .custom-order-form {
+      margin-top: 0.5rem;
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 0.5rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--text-main);
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="datetime-local"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.4rem 0.5rem;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border-soft);
+      font-family: inherit;
+      font-size: 0.8rem;
+      background: #fdf8f1;
+      color: var(--text-main);
+      resize: vertical;
+    }
+
+    textarea { min-height: 70px; }
+
+    /* قالوا عنا */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
       background: var(--card);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
@@ -553,34 +454,78 @@
       padding: 0.9rem;
       font-size: 0.85rem;
       color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* شركاء النجاح */
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 1rem;
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      font-size: 4rem;
+      color: rgba(200,168,97,0.18);
     }
 
-    .partner-card {
+    .testimonial-name {
+      font-weight: 700;
+      margin-top: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .testimonial-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* السوشال ميديا */
+    .social-section-inner {
       background: var(--card);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      padding: 0.8rem;
-      text-align: center;
-      font-size: 0.85rem;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .partner-logo {
-      height: 42px;
-      margin: 0 auto 0.4rem;
+    .social-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #fff;
+      transition: var(--transition-fast);
+      font-size: 0.95rem;
     }
 
-    /* واتساب عائم */
+    .social-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* واتساب عائم يسار */
     .whatsapp-float {
       position: fixed;
       bottom: 1.4rem;
@@ -609,20 +554,48 @@
       box-shadow: 0 22px 42px rgba(22,163,74,0.9);
     }
 
+    /* سهم للأعلى يمين */
+    .scroll-top {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 1.2rem;
+      z-index: 60;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-fast);
+      color: var(--text-main);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     /* الفوتر */
     footer {
       margin-top: 2.5rem;
-      padding-top: 1.5rem;
+      padding-top: 1.3rem;
       border-top: 1px solid var(--border-soft);
       font-size: 0.8rem;
       color: var(--text-muted);
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.7);
     }
 
     .footer-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 1rem 1.5rem;
+      padding: 0 1rem 1.4rem;
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -630,77 +603,56 @@
       align-items: center;
     }
 
-    .social-links {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-      font-size: 1.2rem;
+    /* موشن – ظهور العناصر عند التمرير */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .social-links a {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-      transition: var(--transition-fast);
-      font-size: 0.9rem;
-    }
-
-    .social-links a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ريسبونسيف */
     @media (max-width: 960px) {
-      .hero-overlay {
-        top: 8%;
-        right: 5%;
-        max-width: 60%;
-      }
       .hero-slider {
         height: 420px;
       }
-      .grid-4,
-      .menu-grid,
-      .special-orders-grid,
-      .partners-grid {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .top-grid {
         grid-template-columns: repeat(2, minmax(0,1fr));
       }
-      .reviews-layout,
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .delivery-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .social-section-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
     @media (max-width: 720px) {
-      .nav-links {
-        display: none;
-      }
-      .hero-slider {
-        height: 360px;
-      }
-      .hero-overlay {
-        position: absolute;
-        inset: auto 5% 8% 5%;
-        max-width: 90%;
-      }
-      .hero-title {
-        font-size: 1.6rem;
-      }
-      .grid-4,
-      .menu-grid,
-      .special-orders-grid,
-      .partners-grid {
+      .nav-links { display: none; }
+      .hero-slider { height: 360px; border-radius: 0 0 1.2rem 1.2rem; }
+      .container { padding-inline: 1rem; }
+      .top-grid,
+      .delivery-grid,
+      .testimonials-grid {
         grid-template-columns: 1fr;
       }
       .whatsapp-float {
-        left: 1rem;
+        left: 0.9rem;
+        bottom: 1rem;
+      }
+      .scroll-top {
+        right: 0.9rem;
         bottom: 1rem;
       }
     }
@@ -708,14 +660,17 @@
 </head>
 
 <body>
-  <!-- زر واتساب عائم (طلبات خاصة) -->
+  <!-- واتساب عائم -->
   <div class="whatsapp-float">
     <a class="whatsapp-btn"
-       href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%B5%20%D9%84%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
+       href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%B5%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
        target="_blank" aria-label="تواصل عبر واتساب">
       ☏
     </a>
   </div>
+
+  <!-- سهم للأعلى -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="العودة للأعلى">↑</button>
 
   <header>
     <nav class="nav">
@@ -723,415 +678,362 @@
         <div class="brand-logo">ح</div>
         <div>
           <div class="brand-main">حنيني سبشل</div>
-          <div class="brand-sub">نكهات بيتية بطابع سعودي خاص</div>
+          <div class="brand-sub">أطباق وحلويات منزلية بطابع سعودي يرفع الراس</div>
         </div>
       </div>
 
       <div class="nav-links">
         <a href="#about">عن حنيني</a>
-        <a href="#menu">المنيو</a>
-        <a href="#special-orders">اختر طلبكم</a>
-        <a href="#reviews">قيّمنا</a>
-        <a href="#contact">حابين نسمع منكم</a>
-        <a href="#partners">شركاء النجاح</a>
+        <a href="#top-picks">الأكثر طلباً</a>
+        <a href="#delivery">كيف توصلكم أكلاتنا</a>
+        <a href="#testimonials">قالوا عنا</a>
+        <a href="#social">السوشال ميديا</a>
       </div>
 
       <div class="nav-cta">
         <span class="badge-soft">أسرة منتجة</span>
-        <a href="#special-orders" class="btn-primary">اطلب للمناسبات</a>
+        <a href="#delivery" class="btn-primary">اطلب بالطريقة اللي تناسبك</a>
       </div>
     </nav>
+
+    <!-- الهيرو: صور فقط -->
+    <div class="hero-wrap">
+      <div class="hero-slider">
+        <!-- ضع صورك بمقاس 1920x1080 في مجلد images بهذه الأسماء -->
+        <div class="hero-slide active">
+          <img src="images/hero-1.jpg" alt="عائلة سعودية تستمتع بمنتجات حنيني سبشل في منتزه">
+        </div>
+        <div class="hero-slide">
+          <img src="images/hero-2.jpg" alt="ضيافة قهوة وحلى من حنيني سبشل">
+        </div>
+        <div class="hero-slide">
+          <img src="images/hero-3.jpg" alt="مائدة مناسبات معدة من حنيني سبشل">
+        </div>
+
+        <div class="hero-dots">
+          <div class="hero-dot active" data-index="0"></div>
+          <div class="hero-dot" data-index="1"></div>
+          <div class="hero-dot" data-index="2"></div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main class="page">
     <div class="container">
-      <!-- هيرو -->
-      <section class="hero" id="top">
-        <div class="hero-slider">
-          <!-- استبدل الصور فعلياً داخل مجلد images بنفس الأسماء -->
-          <div class="hero-slide active">
-            <img src="images/hero-1.jpg" alt="عائلة سعودية تستمتع بمنتجات حنيني سبشل في منتزه">
-          </div>
-          <div class="hero-slide">
-            <img src="images/hero-2.jpg" alt="مائدة حلى وقهوة من حنيني سبشل للمناسبات">
-          </div>
-          <div class="hero-slide">
-            <img src="images/hero-3.jpg" alt="جلسة عائلية مع ثلاجة شاي وحلويات حنيني سبشل">
-          </div>
-
-          <div class="hero-overlay">
-            <div class="hero-eyebrow">من مطبخ البيت إلى مناسباتكم الخاصة ✨</div>
-            <h1 class="hero-title">
-              أطباق <span>حنيني سبشل</span> لبيتك ومناسباتك
-            </h1>
-            <p class="hero-subtitle">
-              نعدّ لكم أطباقاً وحلويات منزلية بطابع سعودي أصيل، جاهزة للضيافة اليومية
-              أو البوفيهات الخاصة للمناسبات، مع خيارات خاصة خارج منصات التوصيل.
-            </p>
-            <div class="hero-cta-row">
-              <a href="#special-orders" class="btn-primary">اختر طلبك للمناسبة</a>
-              <a href="https://wa.me/966570905999" target="_blank" class="btn-outline">تواصل واتساب مباشرة</a>
-            </div>
-            <div class="hero-meta">
-              <span>✅ تجهيز طازج يومياً</span>
-              <span>•</span>
-              <span>مثالية للعائلة والضيوف</span>
-            </div>
-          </div>
-
-          <div class="hero-dots">
-            <div class="hero-dot active" data-index="0"></div>
-            <div class="hero-dot" data-index="1"></div>
-            <div class="hero-dot" data-index="2"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- لماذا حنيني سبشل مختلف -->
-      <section id="about">
+      <!-- من نحن / ليش حنيني سبشل مختلف؟ -->
+      <section id="about" class="reveal">
         <div class="section-header">
           <div>
             <div class="section-title">ليش حنيني سبشل مختلف؟</div>
             <div class="section-subtitle">
-              نركز على الجودة والهوية السعودية في كل طبق، من اختيار المكونات حتى طريقة التقديم والضيافة.
+              حنيني سبشل مو مجرد طبق حلى، هو تجربة ضيافة سعودية متكاملة من أول اختيار المكونات إلى آخر لقمة مع الضيوف.
             </div>
           </div>
-          <div class="pill">مميزات التجربة</div>
+          <div class="pill">من نحن</div>
         </div>
 
-        <div class="grid-4">
-          <div class="feature-card">
-            <div class="badge-number">١</div>
-            <div class="feature-title">نكهات بيتية أصيلة</div>
-            <div class="feature-text">
-              وصفات عائلية موروثة تم تطويرها بعناية، تناسب جلسات القهوة والمناسبات الخاصة.
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="badge-number">٢</div>
-            <div class="feature-title">جودة وتغليف راقي</div>
-            <div class="feature-text">
-              نعتني باختيار المكونات والتغليف، لتصل إليك الأطباق بأفضل شكل ونكهة.
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="badge-number">٣</div>
-            <div class="feature-title">خيارات خاصة للمناسبات</div>
-            <div class="feature-text">
-              بوفيهات، ضيافة قهوة، صناديق هدايا، وتنسيق كامل للمناسبات الصغيرة والمتوسطة.
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="badge-number">٤</div>
-            <div class="feature-title">مرونة في الطلب</div>
-            <div class="feature-text">
-              يمكنك الطلب عبر المنصات أو مباشرة للمناسبات الخاصة بتواصل شخصي.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- المنيو المختصر -->
-      <section id="menu">
-        <div class="section-header">
-          <div>
-            <div class="section-title">نماذج من منيو حنيني سبشل</div>
-            <div class="section-subtitle">
-              هذه نماذج لعرض طريقة التقديم. يمكنك تخصيص المنيو حسب نوع المناسبة وعدد الضيوف.
-            </div>
-          </div>
-          <div class="pill">منيو تجريبي</div>
-        </div>
-
-        <div class="menu-grid">
-          <article class="menu-card">
-            <div class="menu-img">
-              <img src="images/menu-1.jpg" alt="حلى حنيني الخاص">
-            </div>
-            <div>
-              <div class="menu-title">حلى حنيني الخاص</div>
-              <div class="menu-desc">
-                حنيني دافئ بطابع نجدي، يقدم في أواني جميلة، مناسب لضيافة القهوة.
-              </div>
-              <div class="menu-meta">متوفر بعلب فردية أو صواني عائلية.</div>
-            </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <p>
+              بدأ حنيني سبشل من مطبخ عائلة سعودية عاشقة للضيافة، تحرص على أن يكون كل طبق يطلع من المطبخ
+              يعكس أصالة البيت السعودي وكرم أهله. نشتغل على دفعات محدودة يومياً عشان نضمن الطعم الطازج والجودة العالية.
+            </p>
+            <p>
+              نختار مكوناتنا بعناية، من التمور والسمون والبهارات وحتى الأواني اللي تُقدَّم فيها الأطباق،
+              عشان تقدر تقدّمها لضيوفك بكل ثقة وكأنك مجهّزها بنفسك في البيت.
+            </p>
           </article>
 
-          <article class="menu-card">
-            <div class="menu-img">
-              <img src="images/menu-2.jpg" alt="بوكس ضيافة قهوة">
-            </div>
-            <div>
-              <div class="menu-title">بوكس ضيافة قهوة</div>
-              <div class="menu-desc">
-                تشكيلة من الحلى والمعجنات الصغيرة تناسب الجلسات اليومية أو الضيوف.
-              </div>
-              <div class="menu-meta">إمكانية تخصيص المحتوى حسب ذوقك.</div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="menu-img">
-              <img src="images/menu-3.jpg" alt="صينية فطور عائلية">
-            </div>
-            <div>
-              <div class="menu-title">صينية فطور عائلية</div>
-              <div class="menu-desc">
-                فطور مرتب للعائلة أو ضيوف الصباح، جاهز للتقديم مباشرة.
-              </div>
-              <div class="menu-meta">بالطلب المسبق للمناسبات الخاصة.</div>
-            </div>
+          <article class="about-card">
+            <strong>وش يهم حنيني سبشل؟</strong>
+            <ul class="about-list">
+              <li>جودة ثابتة في كل مرة تطلب فيها.</li>
+              <li>نظافة عالية في التحضير والتغليف.</li>
+              <li>تقديم يليق بكرمك مع الضيوف.</li>
+              <li>مرونة في الطلب، سواء كمية بسيطة أو بوفيه كامل.</li>
+              <li>اهتمام بالتفاصيل الصغيرة: من ترتيب الصواني إلى توزيع الحلى.</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <!-- اختر طلبكم - طلبات خاصة -->
-      <section id="special-orders">
+      <!-- الأكثر طلباً -->
+      <section id="top-picks" class="reveal">
         <div class="section-header">
           <div>
-            <div class="section-title">اختر طلبكم للمناسبات الخاصة</div>
+            <div class="section-title">الأكثر طلباً</div>
             <div class="section-subtitle">
-              اطلب مباشرة من حنيني سبشل للمناسبات بدون المرور على هنقرستيشن أو جاهز أو نون فود.
+              أطباق تعوّد عملاؤنا يطلبونها باستمرار، وتم تقييمها بأعلى الدرجات من ناحية الطعم والتقديم.
             </div>
           </div>
-          <div class="pill">طلبات خاصة خارج المنصات</div>
+          <div class="pill">٦ أصناف مميزة</div>
         </div>
 
-        <div class="special-orders-grid">
-          <div class="special-card">
-            <div>
-              <div class="special-title">بوفيه مناسبات صغيرة</div>
-              <div class="special-text">
-                بوفيه حلى ومعجنات وقهوة لمناسبات المنزل أو الاستراحات بعدد ضيوف من ١٠–٣٠ شخص.
+        <div class="top-grid">
+          <!-- 1 -->
+          <article class="top-card">
+            <img src="images/top-1.jpg" alt="حلى حنيني الخاص">
+            <div class="top-content">
+              <div class="top-title">حلى حنيني الخاص</div>
+              <div class="top-desc">
+                حنيني دافئ بطابع نجدي، مثالي مع القهوة العربية في الجلسات اليومية والمناسبات.
               </div>
-              <div class="special-meta">يمكن تخصيص الأصناف حسب المناسبة.</div>
+              <div class="top-meta">
+                <span class="stars">★★★★★</span>
+                <span>الأكثر تكراراً في الطلبات</span>
+              </div>
             </div>
-            <a class="btn-outline"
-               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D9%88%D9%81%D9%8A%D9%87%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
-               target="_blank">
-              اطلب هذا البوفيه
-            </a>
-          </div>
+          </article>
 
-          <div class="special-card">
-            <div>
-              <div class="special-title">ضيافة قهوة وشاي</div>
-              <div class="special-text">
-                تجهيز كامل لحلى القهوة مع ثلاجات شاي وقهوة مناسبة للجلسات العائلية.
+          <!-- 2 -->
+          <article class="top-card">
+            <img src="images/top-2.jpg" alt="بوكس ضيافة قهوة">
+            <div class="top-content">
+              <div class="top-title">بوكس ضيافة قهوة</div>
+              <div class="top-desc">
+                تشكيلة حلى ومعجنات صغيرة جاهزة للتقديم، تغنيك عن عناء التجهيز.
               </div>
-              <div class="special-meta">مثالي لليالي الشتاء والجمعات.</div>
+              <div class="top-meta">
+                <span class="stars">★★★★★</span>
+                <span>مفضل لجمعات الخميس</span>
+              </div>
             </div>
-            <a class="btn-outline"
-               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%82%D9%87%D9%88%D8%A9%20%D9%88%D8%B4%D8%A7%D9%8A%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
-               target="_blank">
-              اطلب ضيافة القهوة
-            </a>
-          </div>
+          </article>
 
-          <div class="special-card">
-            <div>
-              <div class="special-title">صناديق هدايا وضيافة</div>
-              <div class="special-text">
-                صناديق أنيقة تحتوي على حلى أو ضيافة جاهزة لتقديمها كهدية أو لضيوفك.
+          <!-- 3 -->
+          <article class="top-card">
+            <img src="images/top-3.jpg" alt="صينية فطور عائلية">
+            <div class="top-content">
+              <div class="top-title">صينية فطور عائلية</div>
+              <div class="top-desc">
+                فطور مرتب لعائلة أو ضيوف الصباح، يجهز ويوصل لك جاهز على الطاولة.
               </div>
-              <div class="special-meta">إمكانية إضافة كرت خاص وعبارات.</div>
+              <div class="top-meta">
+                <span class="stars">★★★★☆</span>
+                <span>الأكثر طلباً في الصباح</span>
+              </div>
             </div>
-            <a class="btn-outline"
-               href="https://wa.me/966570905999?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B5%D9%86%D8%AF%D9%88%D9%82%20%D9%87%D8%AF%D9%8A%D8%A9%20%D8%A3%D9%88%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%85%D9%86%20%D8%AD%D9%86%D9%8A%D9%86%D9%8A%20%D8%B3%D8%A8%D8%B4%D9%84"
-               target="_blank">
-              اطلب صندوق هدية
-            </a>
-          </div>
+          </article>
 
-          <div class="special-card">
-            <div>
-              <div class="special-title">طلبات خاصة حسب رغبتك</div>
-              <div class="special-text">
-                عندك فكرة معينة أو نمط ضيافة مختلف؟ راسلنا وحدد عدد الضيوف ونوع المناسبة.
+          <!-- 4 -->
+          <article class="top-card">
+            <img src="images/top-4.jpg" alt="صينية حلى مناسبات">
+            <div class="top-content">
+              <div class="top-title">صينية حلى مناسبات</div>
+              <div class="top-desc">
+                صينية كبيرة لحلى متنوع، مناسبة لعزائم البيت والاستراحات.
               </div>
-              <div class="special-meta">سنتواصل معك لترتيب التفاصيل.</div>
+              <div class="top-meta">
+                <span class="stars">★★★★☆</span>
+                <span>مناسب لـ +٢٠ ضيف</span>
+              </div>
             </div>
-            <a class="btn-outline"
-               href="https://wa.me/966570905999?text=%D9%84%D8%AF%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%B5%20%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9"
-               target="_blank">
-              اطلب طلباً خاصاً
-            </a>
-          </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="top-card">
+            <img src="images/top-5.jpg" alt="علب فردية للضيافة">
+            <div class="top-content">
+              <div class="top-title">علب فردية للضيافة</div>
+              <div class="top-desc">
+                علب مرتبة لضيافة عملية، مثالية للمكاتب أو الاجتماعات الرسمية.
+              </div>
+              <div class="top-meta">
+                <span class="stars">★★★★★</span>
+                <span>مفضلة للشركات</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="top-card">
+            <img src="images/top-6.jpg" alt="بوكس هدايا">
+            <div class="top-content">
+              <div class="top-title">بوكس هدايا</div>
+              <div class="top-desc">
+                بوكس أنيق يحتوي على حلى مختار بعناية، جاهز يُهدى بأجمل صورة.
+              </div>
+              <div class="top-meta">
+                <span class="stars">★★★★☆</span>
+                <span>مناسب للهدايا الخاصة</span>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- قسم قيمنا -->
-      <section id="reviews">
+      <!-- كيف توصلكم أكلاتنا -->
+      <section id="delivery" class="reveal">
         <div class="section-header">
           <div>
-            <div class="section-title">قيّم تجربتك مع حنيني سبشل</div>
+            <div class="section-title">كيف توصلكم أكلاتنا؟</div>
             <div class="section-subtitle">
-              نعتز بكل رأي وتقييم. اكتب تقييمك وسيظهر مباشرة على هذه الصفحة (محفوظ على جهازك).
+              تختار الطريقة اللي تناسبك: منصات التوصيل المعروفة، أو تنسيق مباشر حسب طلبك ومناسبتك الخاصة.
             </div>
           </div>
-          <div class="pill">آراء العملاء</div>
+          <div class="pill">٤ طرق مريحة</div>
         </div>
 
-        <div class="reviews-layout">
-          <div class="reviews-list" id="reviewsList">
-            <!-- التقييمات تُضاف هنا عبر جافاسكربت -->
-          </div>
+        <div class="delivery-grid">
+          <!-- هنقرستيشن -->
+          <article class="delivery-card reveal">
+            <div class="delivery-icon">🍔</div>
+            <div class="delivery-title">هنقرستيشن</div>
+            <div class="delivery-text">
+              اطلب مباشرة من صفحة حنيني سبشل في هنقرستيشن حسب توفّر الفرع في مدينتك.
+            </div>
+            <a href="#" target="_blank" class="delivery-link">فتح صفحة حنيني في هنقرستيشن ↗</a>
+          </article>
 
-          <div class="review-form">
-            <form id="reviewForm">
+          <!-- جاهز -->
+          <article class="delivery-card reveal">
+            <div class="delivery-icon">📦</div>
+            <div class="delivery-title">جاهز</div>
+            <div class="delivery-text">
+              توصيل سريع لطلباتكم اليومية، مثالي للجلسات المفاجئة أو الضيوف غير المتوقّعين.
+            </div>
+            <a href="#" target="_blank" class="delivery-link">فتح صفحة حنيني في جاهز ↗</a>
+          </article>
+
+          <!-- نون فود -->
+          <article class="delivery-card reveal">
+            <div class="delivery-icon">🛍</div>
+            <div class="delivery-title">نون فود</div>
+            <div class="delivery-text">
+              خيار إضافي يساعدك تطلب منتجات حنيني مع مشترياتك الأخرى من نون.
+            </div>
+            <a href="#" target="_blank" class="delivery-link">فتح صفحة حنيني في نون فود ↗</a>
+          </article>
+
+          <!-- طلبك على مزاجك -->
+          <article class="delivery-card reveal">
+            <div class="delivery-icon">✨</div>
+            <div class="delivery-title">تنسّق طلبك على مزاجك</div>
+            <div class="delivery-text">
+              عبّ النموذج التالي وحدد نوع المناسبة وعدد الضيوف وأهم التفاصيل، ونرتب لك طلب خاص يجيك جاهز.
+            </div>
+
+            <form id="customOrderForm" class="custom-order-form">
               <div class="form-row">
-                <label style="width:100%;">
-                  الاسم (اختياري):
-                  <input type="text" name="name" placeholder="مثال: أم محمد">
+                <label style="flex:1 1 120px;">
+                  الاسم:
+                  <input type="text" name="name" placeholder="اسمك" required>
+                </label>
+                <label style="flex:1 1 140px;">
+                  نوع المناسبة:
+                  <input type="text" name="occasion" placeholder="عزيمة، قهوة، اجتماع..." required>
                 </label>
               </div>
               <div class="form-row">
                 <label style="flex:1 1 120px;">
-                  التقييم:
-                  <select name="rating" required>
-                    <option value="5">5 نجوم - ممتاز</option>
-                    <option value="4">4 نجوم - جيد جداً</option>
-                    <option value="3">3 نجوم - جيد</option>
-                    <option value="2">2 نجوم - مقبول</option>
-                    <option value="1">1 نجمة - يحتاج تحسين</option>
-                  </select>
+                  عدد الضيوف:
+                  <input type="number" name="guests" min="1" placeholder="مثال: 15" required>
+                </label>
+                <label style="flex:1 1 150px;">
+                  التاريخ والوقت:
+                  <input type="datetime-local" name="datetime" required>
                 </label>
               </div>
               <div class="form-row">
                 <label style="width:100%;">
-                  رأيك عن التجربة:
-                  <textarea name="text" required placeholder="احك لنا عن تجربتك باختصار..."></textarea>
+                  نوع الأكل المطلوب:
+                  <input type="text" name="food" placeholder="حلى، ضيافة قهوة، فطور، بوفيه..." required>
                 </label>
               </div>
-              <button type="submit" class="btn-primary">إرسال التقييم</button>
+              <div class="form-row">
+                <label style="width:100%;">
+                  العنوان المختصر:
+                  <input type="text" name="address" placeholder="الحي + المدينة + وصف بسيط" required>
+                </label>
+              </div>
+              <div class="form-row">
+                <label style="width:100%;">
+                  ملاحظات إضافية:
+                  <textarea name="notes" placeholder="مثال: بدون مكسرات، تغليف هدايا، وقت تسليم دقيق..."></textarea>
+                </label>
+              </div>
+              <button type="submit" class="btn-outline">إرسال التفاصيل على واتساب</button>
             </form>
-          </div>
+          </article>
         </div>
       </section>
 
-      <!-- حابين نسمع منكم -->
-      <section id="contact">
+      <!-- قالوا عنا -->
+      <section id="testimonials" class="reveal">
         <div class="section-header">
           <div>
-            <div class="section-title">حابين نسمع منكم</div>
+            <div class="section-title">قالوا عنا</div>
             <div class="section-subtitle">
-              ملاحظاتكم واقتراحاتكم تساعدنا نطوّر حنيني سبشل ونخدمكم بشكل أجمل.
+              آراء من عملاء جرّبوا حنيني سبشل وأصبحت أطباقنا جزء من مناسباتهم وجمعاتهم.
             </div>
           </div>
-          <div class="pill">نموذج التواصل</div>
+          <div class="pill">آراء مختارة</div>
         </div>
 
-        <div class="contact-grid">
-          <div>
-            <!-- نموذج يرسل للإيميل عبر mailto (مؤقت) -->
-            <form
-              action="mailto:abdulaziz.algharawi@gmail.com"
-              method="POST"
-              enctype="text/plain"
-            >
-              <div class="form-row">
-                <label style="width:100%;">
-                  الاسم:
-                  <input type="text" name="الاسم" required>
-                </label>
-              </div>
-              <div class="form-row">
-                <label style="width:100%;">
-                  البريد الإلكتروني:
-                  <input type="email" name="البريد" required>
-                </label>
-              </div>
-              <div class="form-row">
-                <label style="width:100%;">
-                  عنوان الرسالة:
-                  <input type="text" name="العنوان" placeholder="مثال: ملاحظات على بوكس الضيافة">
-                </label>
-              </div>
-              <div class="form-row">
-                <label style="width:100%;">
-                  رسالتك:
-                  <textarea name="الرسالة" required placeholder="اكتب ملاحظاتك أو اقتراحاتك هنا..."></textarea>
-                </label>
-              </div>
-              <button type="submit" class="btn-primary">إرسال الملاحظة عبر الإيميل</button>
-            </form>
-          </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p>
+              "طلبنا بوكس ضيافة قهوة لعزيمة عائلية، كل أحد كان يسأل من وين الحلى. التغليف مرتب والطعم يرد الروح."
+            </p>
+            <div class="testimonial-name">أم فيصل</div>
+            <div class="testimonial-meta">رياض – بوكس ضيافة قهوة</div>
+          </article>
 
-          <aside class="contact-info-card">
-            <strong>قنوات التواصل المباشر:</strong>
+          <article class="testimonial-card">
             <p>
-              📱 واتساب / جوال: <br>
-              <a href="https://wa.me/966570905999" target="_blank">0570905999</a>
+              "أحلى شيء إنهم يهتمون بالتفاصيل، من ترتيب الصواني إلى آخر قطعة حلى. صار حنيني سبشل خيار ثابت في مناسباتنا."
             </p>
+            <div class="testimonial-name">أبو خالد</div>
+            <div class="testimonial-meta">مناسبات عائلية – صينية حلى</div>
+          </article>
+
+          <article class="testimonial-card">
             <p>
-              📧 البريد الإلكتروني: <br>
-              <a href="mailto:abdulaziz.algharawi@gmail.com">abdulaziz.algharawi@gmail.com</a>
+              "تواصلت معهم ورتبوا لنا فطور كامل للاجتماع في المكتب، كل شيء جاهز وفي الوقت، أنصح فيه للي يدور حل محترم وسريع."
             </p>
-            <p>
-              يمكنك دائماً التواصل معنا لترتيب الطلبات الخاصة، أو إرسال أي ملاحظة
-              حول الجودة، التغليف، أو تجربة الضيافة.
-            </p>
-          </aside>
+            <div class="testimonial-name">قسم الموارد البشرية</div>
+            <div class="testimonial-meta">فطور شركات – طلب خاص</div>
+          </article>
         </div>
       </section>
 
-      <!-- شركاء النجاح -->
-      <section id="partners">
+      <!-- السوشال ميديا -->
+      <section id="social" class="reveal">
         <div class="section-header">
           <div>
-            <div class="section-title">شركاء النجاح</div>
+            <div class="section-title">تابعونا على السوشال ميديا</div>
             <div class="section-subtitle">
-              نفخر بالتعاون مع جهات وشركاء يشاركوننا نفس الاهتمام بالجودة والضيافة.
+              تشوفون في حساباتنا آخر العروض، وأطباق اليوم، وكواليس تجهيز الطلبات من مطبخ حنيني سبشل.
             </div>
           </div>
-          <div class="pill">٤ جهات رئيسية</div>
+          <div class="pill">خلك قريب من النكهة</div>
         </div>
 
-        <div class="partners-grid">
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="images/partner-1.png" alt="شريك النجاح الأول">
-            </div>
-            <div>شريك النجاح ١</div>
+        <div class="social-section-inner">
+          <div class="social-text">
+            نحرص نشارككم صور من الواقع، قبل وبعد تجهيز الطلبات، وتفاصيل الترتيب والتقديم،
+            عشان تطمّن أكثر قبل ما تطلب وتاخذ فكرة واضحة عن اللي يوصلك.
           </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="images/partner-2.png" alt="شريك النجاح الثاني">
-            </div>
-            <div>شريك النجاح ٢</div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="images/partner-3.png" alt="شريك النجاح الثالث">
-            </div>
-            <div>شريك النجاح ٣</div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="images/partner-4.png" alt="شريك النجاح الرابع">
-            </div>
-            <div>شريك النجاح ٤</div>
+          <div class="social-links">
+            <!-- غيّر الروابط لاحقاً لحساباتك الحقيقية -->
+            <a href="#" aria-label="إنستغرام">IG</a>
+            <a href="#" aria-label="سناب شات">SC</a>
+            <a href="#" aria-label="تويتر X">X</a>
+            <a href="https://wa.me/966570905999" target="_blank" aria-label="واتساب">WA</a>
           </div>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- فوتر -->
   <footer>
     <div class="footer-inner">
       <div>
         © <span id="year"></span> حنيني سبشل – Hanini Special. جميع الحقوق محفوظة.
       </div>
       <div>
-        تواصل: واتساب <a href="https://wa.me/966570905999" target="_blank">0570905999</a> –
-        إيميل <a href="mailto:abdulaziz.algharawi@gmail.com">abdulaziz.algharawi@gmail.com</a>
-      </div>
-      <div class="social-links">
-        <a href="#" aria-label="إنستغرام">IG</a>
-        <a href="#" aria-label="سناب شات">SC</a>
-        <a href="#" aria-label="تويتر X">X</a>
-        <a href="https://wa.me/966570905999" target="_blank" aria-label="واتساب">WA</a>
+        تواصل: واتساب <a href="https://wa.me/966570905999" target="_blank">0570905999</a>
       </div>
     </div>
   </footer>
@@ -1140,18 +1042,14 @@
     // سنة الفوتر
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // سلايدر الهيرو (3 صور)
+    // سلايدر الهيرو (3 صور، بدون نص)
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
     let currentSlide = 0;
 
     function showSlide(index) {
-      slides.forEach((s, i) => {
-        s.classList.toggle('active', i === index);
-      });
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === index);
-      });
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
       currentSlide = index;
     }
 
@@ -1167,74 +1065,56 @@
       showSlide(next);
     }, 5000);
 
-    // قسم قيمنا - تخزين محلي في المتصفح
-    const reviewsKey = 'hanini_reviews_v1';
-    const reviewsListEl = document.getElementById('reviewsList');
-    const reviewForm = document.getElementById('reviewForm');
-
-    function loadReviews() {
-      try {
-        const stored = localStorage.getItem(reviewsKey);
-        return stored ? JSON.parse(stored) : [];
-      } catch (e) {
-        return [];
-      }
-    }
-
-    function saveReviews(reviews) {
-      try {
-        localStorage.setItem(reviewsKey, JSON.stringify(reviews));
-      } catch (e) {
-        // تجاهل الخطأ إذا التخزين غير متاح
-      }
-    }
-
-    function renderReviews() {
-      const reviews = loadReviews();
-      reviewsListEl.innerHTML = '';
-      if (reviews.length === 0) {
-        reviewsListEl.innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted);margin:0;">لم يتم إضافة تقييمات بعد. كن أول من يشارك رأيه 🤍</p>';
-        return;
-      }
-      reviews.slice().reverse().forEach(r => {
-        const item = document.createElement('div');
-        item.className = 'review-item';
-        item.innerHTML = `
-          <div class="review-header">
-            <span class="review-name">${r.name || 'عميل حنيني'}</span>
-            <span class="review-rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
-          </div>
-          <div class="review-text">${r.text}</div>
-          <div class="review-date">${r.date}</div>
-        `;
-        reviewsListEl.appendChild(item);
-      });
-    }
-
-    reviewForm.addEventListener('submit', (e) => {
+    // نموذج الطلب الخاص -> إرسال للواتساب
+    const customForm = document.getElementById('customOrderForm');
+    customForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const formData = new FormData(reviewForm);
-      const name = (formData.get('name') || '').toString().trim();
-      const rating = Number(formData.get('rating') || 5);
-      const text = (formData.get('text') || '').toString().trim();
+      const fd = new FormData(customForm);
+      const name = fd.get('name') || '';
+      const occasion = fd.get('occasion') || '';
+      const guests = fd.get('guests') || '';
+      const datetime = fd.get('datetime') || '';
+      const food = fd.get('food') || '';
+      const address = fd.get('address') || '';
+      const notes = fd.get('notes') || '';
 
-      if (!text) return;
+      let msg = `طلب خاص من حنيني سبشل:%0A`;
+      msg += `الاسم: ${name}%0A`;
+      msg += `نوع المناسبة: ${occasion}%0A`;
+      msg += `عدد الضيوف: ${guests}%0A`;
+      msg += `التاريخ والوقت: ${datetime}%0A`;
+      msg += `نوع الأكل المطلوب: ${food}%0A`;
+      msg += `العنوان: ${address}%0A`;
+      if (notes.trim()) {
+        msg += `ملاحظات إضافية: ${notes}%0A`;
+      }
 
-      const now = new Date();
-      const dateStr = now.toLocaleDateString('ar-SA', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      });
-
-      const reviews = loadReviews();
-      reviews.push({ name, rating, text, date: dateStr });
-      saveReviews(reviews);
-      renderReviews();
-      reviewForm.reset();
+      const url = `https://wa.me/966570905999?text=${msg}`;
+      window.open(url, '_blank');
     });
 
-    renderReviews();
+    // سهم للأعلى
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // موشن – ظهور الأقسام عند التمرير
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
