@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 const computedFields = {
   slug: {
-    type: 'string',
+    type: 'string' as const,
     resolve: (doc: { _raw: { flattenedPath: string } }) => doc._raw.flattenedPath.replace(/^[^/]+\//, '')
   }
 };
