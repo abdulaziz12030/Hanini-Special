@@ -1,0 +1,2 @@
+import { reviews } from '@/lib/data';
+export function Reviews(){return <section className="container-shell py-10"><span className="gold-badge">التقييمات</span><h2 className="section-title mt-5">آراء العملاء</h2><div className="mt-8 grid gap-6 lg:grid-cols-3">{reviews.map(review=><div key={review.name} className="card p-6"><p className="leading-8 text-black/70">“{review.text}”</p><p className="mt-5 font-bold text-gold">{review.name}</p></div>)}</div></section>}
