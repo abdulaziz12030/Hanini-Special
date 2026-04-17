@@ -1,50 +1,73 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { Product } from '@/types';
-import { currency } from '@/lib/utils';
+type ProductOption = {
+  label: string;
+  price: number;
+};
 
-export function ProductCard({ product }: { product: Product }) {
-  const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+export type Product = {
+  id: string;
+  name: string;
+  description: string;
+  category?: string;
+  categoryId?: string;
+  image?: string;
+  badge?: string;
+  options: ProductOption[];
+};
 
-  const activePrice = useMemo(() => {
-    if (product.variants?.length) return product.variants[selectedVariantIndex]?.price ?? 0;
-    return product.basePrice ?? 0;
-  }, [product, selectedVariantIndex]);
+type ProductCardProps = {
+  product: Product;
+};
 
+export function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="glass-card overflow-hidden">
-      <div className="h-56 bg-gradient-to-br from-brand-gold/15 via-white to-brand-gold/10" />
-      <div className="space-y-4 p-6">
-        <div className="flex items-start justify-between gap-4">
+    <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">
+      <div className="flex h-56 items-center justify-center bg-gradient-to-br from-brand-dark to-black text-white/40">
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="text-sm">صورة المنتج ستضاف لاحقًا</span>
+        )}
+      </div>
+
+      <div className="p-6">
+        <div className="mb-3 flex items-start justify-between gap-3">
           <div>
-            <h3 className="text-xl font-bold">{product.name}</h3>
-            <p className="mt-2 text-sm leading-7 text-slate-600">{product.description}</p>
+            <h3 className="text-xl font-bold text-white">{product.name}</h3>
+            <p className="mt-1 text-sm text-white/50">
+              {product.category || product.categoryId || 'منتج مميز'}
+            </p>
           </div>
-          <div className="text-right">
-            <p className="text-sm text-slate-500">السعر</p>
-            <p className="text-lg font-black text-brand-gold">{currency.format(activePrice)}</p>
-          </div>
+
+          {product.badge ? (
+            <span className="rounded-full bg-brand-gold/10 px-3 py-1 text-xs font-semibold text-brand-gold">
+              {product.badge}
+            </span>
+          ) : null}
         </div>
 
-        {product.variants?.length ? (
-          <div className="flex flex-wrap gap-2">
-            {product.variants.map((variant, index) => (
-              <button
-                key={variant.label}
-                type="button"
-                onClick={() => setSelectedVariantIndex(index)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                  index === selectedVariantIndex ? 'bg-brand-gold text-black' : 'bg-slate-100 text-slate-700'
-                }`}
-              >
-                {variant.label}
-              </button>
-            ))}
-          </div>
-        ) : null}
+        <p className="text-sm leading-7 text-white/75">{product.description}</p>
 
-        <button className="w-full rounded-full bg-brand-background px-5 py-3 text-sm font-bold text-white transition hover:opacity-95">
+        <div className="mt-5 space-y-2">
+          {product.options.map((option) => (
+            <div
+              key={option.label}
+              className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3"
+            >
+              <span className="text-sm text-white/80">{option.label}</span>
+              <span className="font-semibold text-brand-gold">
+                {option.price} ر.س
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <button className="mt-6 w-full rounded-2xl bg-brand-gold px-4 py-3 font-semibold text-black transition hover:opacity-90">
           أضف إلى الطلب
         </button>
       </div>
