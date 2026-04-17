@@ -1,1 +1,0 @@
-export function Footer(){return <footer className="border-t border-black/5 py-8"><div className="container-shell flex flex-col gap-3 text-sm text-black/60 sm:flex-row sm:items-center sm:justify-between"><p>حنيني سبيشل — نسخة معاينة جاهزة للاستعراض والتطوير.</p><p>النشر على Vercel متاح بعد رفع المشروع إلى GitHub.</p></div></footer>}
