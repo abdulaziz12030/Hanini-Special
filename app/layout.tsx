@@ -1,4 +1,15 @@
-import './globals.css';
 import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'حنيني سبيشل', description: 'واجهة احترافية لمشروع حنيني سبيشل' };
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="ar" dir="rtl"><body>{children}</body></html>; }
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'حنيني سبيشل | Hanini Special',
+  description: 'واجهة استعراضية فاخرة لمشروع حنيني سبيشل',
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="ar" dir="rtl">
+      <body>{children}</body>
+    </html>
+  );
+}

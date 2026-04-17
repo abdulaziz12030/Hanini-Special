@@ -1,4 +1,73 @@
 'use client';
-import { useMemo, useState } from 'react';
+
+import { useState } from 'react';
 import { products } from '@/lib/data';
-export function Products(){const [selected,setSelected]=useState<Record<string,number>>({}); const totalPreview=useMemo(()=>products.reduce((sum,product)=>{const idx=selected[product.id]??0; return sum+product.options[idx].price;},0),[selected]); return <section id="products" className="container-shell py-10"><div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><span className="gold-badge">الأقسام والمنتجات</span><h2 className="section-title mt-5">منتجات قابلة لاختيار الحجم والسعر</h2></div><div className="card px-5 py-4 text-sm font-semibold text-black/70">إجمالي معاينة الأسعار الحالية: {totalPreview} ريال</div></div><div className="mt-8 grid gap-6 lg:grid-cols-2">{products.map(product=>{const optionIndex=selected[product.id]??0; const option=product.options[optionIndex]; return <article key={product.id} className="card overflow-hidden p-6"><div className="flex items-start justify-between gap-4"><div><div className="flex items-center gap-3"><h3 className="text-2xl font-bold">{product.name}</h3>{product.badge?<span className="rounded-full bg-gold px-3 py-1 text-xs font-bold text-white">{product.badge}</span>:null}</div><p className="mt-3 text-sm text-black/50">{product.category}</p><p className="mt-4 leading-8 text-black/70">{product.description}</p></div><div className="h-24 w-24 rounded-3xl bg-gradient-to-br from-gold/15 to-black/5"/></div><div className="mt-6 flex flex-wrap gap-3">{product.options.map((item,index)=><button key={item.label} type="button" onClick={()=>setSelected(prev=>({...prev,[product.id]:index}))} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${optionIndex===index?'bg-ink text-white':'border border-black/10 bg-white text-black/70'}`}>{item.label} - {item.price} ريال</button>)}</div><div className="mt-6 flex items-center justify-between"><div><p className="text-sm text-black/50">السعر الحالي</p><p className="text-2xl font-black text-gold">{option.price} ريال</p></div><a href="#order" className="rounded-full bg-ink px-5 py-3 text-sm font-bold text-white">أضف إلى الطلب</a></div></article>})}</div></section>}
+
+export function Products() {
+  const [selected, setSelected] = useState<Record<string, number>>({});
+
+  return (
+    <section id="products" className="py-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-semibold tracking-[0.3em] text-brand-gold">المنتجات</p>
+          <h2 className="mt-4 text-4xl font-bold">منتجات مع خيارات أحجام وأسعار تتغير تلقائيًا</h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {products.map((product) => {
+            const currentIndex = selected[product.id] ?? 0;
+            const currentOption = product.options[currentIndex];
+
+            return (
+              <div key={product.id} className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">
+                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-black to-brand-dark text-sm text-white/40">
+                  صورة المنتج ستضاف لاحقًا
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-xl font-bold">{product.name}</h3>
+                      <p className="mt-1 text-sm text-brand-gold">{product.category}</p>
+                    </div>
+                    {product.badge ? (
+                      <span className="rounded-full bg-brand-gold/10 px-3 py-1 text-xs font-semibold text-brand-gold">
+                        {product.badge}
+                      </span>
+                    ) : null}
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-white/75">{product.description}</p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {product.options.map((option, index) => (
+                      <button
+                        key={option.label}
+                        onClick={() => setSelected((prev) => ({ ...prev, [product.id]: index }))}
+                        className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                          currentIndex === index
+                            ? 'bg-brand-gold text-black'
+                            : 'border border-white/10 bg-black/20 text-white'
+                        }`}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
+                    <p className="text-sm text-white/60">السعر الحالي</p>
+                    <p className="mt-1 text-2xl font-black text-brand-gold">{currentOption.price} ر.س</p>
+                  </div>
+
+                  <button className="mt-6 w-full rounded-2xl bg-brand-gold px-4 py-3 font-bold text-black">
+                    أضف إلى الطلب
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,2 +1,28 @@
-import Image from 'next/image';
-export function Hero(){return <section id="top" className="container-shell grid gap-8 py-10 lg:grid-cols-[1.15fr_.85fr] lg:py-16"><div className="card p-8 sm:p-10"><span className="gold-badge">صُنع بحب في السعودية</span><h1 className="mt-6 text-4xl font-black leading-tight sm:text-6xl">تجربة ضيافة سعودية <span className="text-gold">فخمة</span> بطابع عصري</h1><p className="mt-6 max-w-2xl text-lg leading-9 text-black/70">حنيني سبيشل مشروع سعودي يقدّم الحلويات والمشروبات وبوكسات الجمعات والاشتراكات بأسلوب أنيق يليق بمختلف شرائح المجتمع في المملكة، مع عناية كبيرة بالطعم، التقديم، وسهولة الطلب.</p><div className="mt-8 flex flex-wrap gap-4"><a href="#order" className="rounded-full bg-ink px-6 py-3 font-semibold text-white">ابدأ الطلب الآن</a><a href="#subscriptions" className="rounded-full border border-black/10 px-6 py-3 font-semibold">استعرض الاشتراكات</a></div></div><div className="card flex items-center justify-center p-8"><Image src="/brand/logo-wordmark.jpg" alt="Hanini Special" width={520} height={260} className="h-auto w-full max-w-xl" priority/></div></section>}
+export function Hero() {
+  return (
+    <section id="top" className="border-b border-white/10 bg-gradient-to-b from-black to-brand-dark">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center">
+        <div>
+          <p className="text-sm font-semibold tracking-[0.35em] text-brand-gold">صُنع بحب في السعودية</p>
+          <h1 className="mt-5 text-5xl font-black leading-tight md:text-6xl">حنيني سبيشل</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            مشروع سعودي يقدم تجربة ضيافة متكاملة تجمع بين أصالة المذاق وجودة التقديم،
+            من الحلويات والمشروبات إلى بوكسات الجمعات والاشتراكات الشهرية بلمسة تسويقية فاخرة.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#order" className="rounded-2xl bg-brand-gold px-6 py-3 font-bold text-black">اطلب الآن</a>
+            <a href="#subscriptions" className="rounded-2xl border border-white/15 px-6 py-3 font-bold text-white">الاشتراكات</a>
+          </div>
+        </div>
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur">
+          <div className="rounded-[1.5rem] border border-dashed border-brand-gold/40 bg-black/20 p-10 text-center">
+            <div className="mx-auto flex h-44 w-44 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold">
+              Hanini Special
+            </div>
+            <p className="mt-6 text-white/70">أضف صور المنتجات لاحقًا داخل مجلد <span dir="ltr">public/</span> بسهولة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -7,10 +7,9 @@ export type Product = {
   id: string;
   name: string;
   description: string;
-  category?: string;
-  categoryId?: string;
-  image?: string;
+  category: string;
   badge?: string;
+  image?: string;
   options: ProductOption[];
 };
 
@@ -18,15 +17,12 @@ export type Category = {
   id: string;
   title: string;
   blurb: string;
-  pricingHint?: string;
-  shortDescription?: string;
 };
 
 export type Review = {
   id: string;
   name: string;
   comment: string;
-  rating: number;
 };
 
 export type SubscriptionPlan = {

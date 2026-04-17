@@ -1,4 +1,37 @@
 'use client';
-import { FormEvent, useState } from 'react';
-import { meals } from '@/lib/data';
-export function OrderForm(){const [message,setMessage]=useState(''); function handleSubmit(event:FormEvent<HTMLFormElement>){event.preventDefault(); setMessage('تم تجهيز نموذج الطلب للمعاينة. عند ربط Supabase ووسيلة الدفع سيبدأ استقبال الطلبات فعليًا.');} return <section id="order" className="container-shell py-10"><div className="grid gap-6 lg:grid-cols-[1fr_.8fr]"><form onSubmit={handleSubmit} className="card p-6 sm:p-8"><span className="gold-badge">نموذج الطلب</span><h2 className="section-title mt-5">أرسل طلبك أو اطلب اشتراكك الشهري</h2><div className="mt-8 grid gap-4 sm:grid-cols-2"><input className="rounded-2xl border border-black/10 px-4 py-3 outline-none" placeholder="الاسم" required/><input className="rounded-2xl border border-black/10 px-4 py-3 outline-none" placeholder="رقم الجوال" required/><select className="rounded-2xl border border-black/10 px-4 py-3 outline-none sm:col-span-2"><option>اختر نوع الطلب</option><option>طلب منتجات</option><option>اشتراك الحلويات</option><option>اشتراك المشروبات</option><option>اشتراك بوكسات الجمعات</option><option>اشتراك الوجبات الصحية</option></select><textarea className="min-h-32 rounded-2xl border border-black/10 px-4 py-3 outline-none sm:col-span-2" placeholder="تفاصيل الطلب أو الملاحظات"/></div><button className="mt-6 rounded-full bg-ink px-6 py-3 font-semibold text-white">إرسال الطلب</button>{message?<p className="mt-4 text-sm text-green-700">{message}</p>:null}</form><div className="card p-6 sm:p-8"><span className="gold-badge">اشتراك الوجبات الصحية</span><h3 className="mt-5 text-2xl font-bold">اختر الوجبات المناسبة لك</h3><div className="mt-6 space-y-3">{meals.map(meal=><label key={meal} className="flex items-center gap-3 rounded-2xl border border-black/10 px-4 py-3"><input type="checkbox" className="h-4 w-4"/><span>{meal}</span></label>)}</div><a href="https://wa.me/966500000000?text=مرحبًا، أرغب في الطلب من حنيني سبيشل" className="mt-6 inline-flex rounded-full bg-gold px-5 py-3 font-semibold text-white">اطلب عبر واتساب</a><p className="mt-4 text-sm leading-7 text-black/60">تم تضمين زر واتساب للمعاينة. يمكنك لاحقًا استبدال الرقم برقم المشروع الرسمي.</p></div></div></section>}
+
+import { useState } from 'react';
+
+export function OrderForm() {
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section id="order" className="py-20">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <div className="text-center">
+            <p className="text-sm font-semibold tracking-[0.3em] text-brand-gold">نموذج الطلب</p>
+            <h2 className="mt-4 text-4xl font-bold">أرسل طلبك بسهولة</h2>
+            <p className="mt-4 text-white/70">هذا نموذج استعراضي جاهز للواجهة، ويمكن لاحقًا ربطه بقاعدة بيانات أو واتساب أو لوحة تحكم.</p>
+          </div>
+
+          <form
+            className="mt-8 grid gap-4 md:grid-cols-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSent(true);
+            }}
+          >
+            <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 outline-none" placeholder="الاسم" />
+            <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 outline-none" placeholder="رقم الجوال" />
+            <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 outline-none md:col-span-2" placeholder="الخدمة المطلوبة" />
+            <textarea className="min-h-32 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 outline-none md:col-span-2" placeholder="التفاصيل أو اختيارات الوجبات الصحية" />
+            <button className="md:col-span-2 rounded-2xl bg-brand-gold px-4 py-3 font-bold text-black">إرسال الطلب</button>
+          </form>
+
+          {sent ? <p className="mt-4 text-center text-brand-gold">تم استلام النموذج الاستعراضي بنجاح.</p> : null}
+        </div>
+      </div>
+    </section>
+  );
+}

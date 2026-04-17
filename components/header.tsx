@@ -1,2 +1,17 @@
-import Image from 'next/image';
-export function Header(){return <header className="sticky top-0 z-30 border-b border-black/5 bg-sand/90 backdrop-blur"><div className="container-shell flex items-center justify-between py-4"><a href="#top" className="flex items-center gap-3"><Image src="/brand/logo-mark.jpg" alt="حنيني سبيشل" width={44} height={44} className="rounded-2xl"/><div><p className="text-lg font-bold">حنيني سبيشل</p><p className="text-sm text-black/60">صُنع بحب في السعودية</p></div></a><nav className="hidden gap-6 text-sm font-medium md:flex"><a href="#about">عن المشروع</a><a href="#products">المنتجات</a><a href="#subscriptions">الاشتراكات</a><a href="#order">الطلب</a><a href="/admin">لوحة التحكم</a></nav></div></header>}
+export function Header() {
+  return (
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-black/60 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#top" className="text-2xl font-bold text-brand-gold">حنيني سبيشل</a>
+        <nav className="hidden gap-6 text-sm text-white/75 md:flex">
+          <a href="#about">من نحن</a>
+          <a href="#categories">الأقسام</a>
+          <a href="#products">المنتجات</a>
+          <a href="#subscriptions">الاشتراكات</a>
+          <a href="#reviews">التقييمات</a>
+          <a href="#order">اطلب الآن</a>
+        </nav>
+      </div>
+    </header>
+  );
+}

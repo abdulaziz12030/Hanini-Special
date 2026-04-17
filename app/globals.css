@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{@apply bg-sand text-ink antialiased} html{scroll-behavior:smooth}
-.container-shell{@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8}
-.card{@apply rounded-3xl bg-white shadow-soft border border-black/5}
-.gold-badge{@apply inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/10 px-4 py-2 text-sm font-medium text-brown}
-.section-title{@apply text-3xl font-bold tracking-tight sm:text-4xl}
-.section-copy{@apply mt-4 max-w-3xl text-base leading-8 text-black/70}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-brand-dark text-white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
