@@ -1,23 +1,28 @@
 import { products } from '@/lib/data';
-import { ProductCard } from './product-card';
+import { ProductCard } from '@/components/product-card';
 
 export function ProductSection() {
   return (
-    <section className="container-shell py-16 md:py-24">
-      <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <span className="gold-badge">المنتجات</span>
-          <h2 className="section-title mt-4">عرض المنتجات مع تحديث السعر حسب الحجم</h2>
+    <section id="products" className="py-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-semibold tracking-[0.3em] text-brand-gold">
+            منتجاتنا
+          </p>
+          <h2 className="mt-4 text-4xl font-bold text-white">
+            تشكيلات مختارة بذوق سعودي أصيل
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
+            اختر من الحلويات والمشروبات والبوكسات مع خيارات أحجام وأسعار
+            متنوعة تناسب ذوقك ومناسبتك.
+          </p>
         </div>
-        <p className="max-w-2xl text-lg leading-8 text-slate-600">
-          الهيكل الحالي يدعم رفع الصور لاحقًا داخل المسارات المخصصة في مجلد المنتجات، مع بقاء البطاقات والأسعار جاهزة للعمل مباشرة.
-        </p>
-      </div>
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </section>
   );
